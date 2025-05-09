@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abaf5f5ae3fb3ef4abc845d5f7da5b6f, type: 3}
+  m_Name: "HersztBandyt\xF3w"
+  m_EditorClassIdentifier: 
+  characterRace: "Herszt bandyt\xF3w"
+  isEnemy: 1
+  bieglosciBojowe: "Kr\xF3tki miecz 3 (3/16), \u0141uk 2 (3/14,  Celny Atak)"
+  mroczneAtrybuty: "Triumfalny Wrzask. Wydaj 1 punkt  Determinacji, by przywr\xF3ci\u0107
+    po 1 punkcie Determinacji  pozosta\u0142ym bandytom w potyczce."
+  values: 030000000c00000001000000030000000100000002000000

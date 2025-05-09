@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abaf5f5ae3fb3ef4abc845d5f7da5b6f, type: 3}
+  m_Name: PiesSaurona
+  m_EditorClassIdentifier: 
+  characterRace: Pies Saurona
+  isEnemy: 1
+  bieglosciBojowe: "K\u0142y 3 (5/14, Celny Atak), Pazury 3 (5/14,  Pochwycenie) "
+  mroczneAtrybuty: "\u015Amierciono\u015Bne Uderzenie. Ranione  przez ciebie cele
+    wykonuj\u0105 Os\u0142abiony rzut ko\u015Bci\u0105 Dzia\u0142a\x02nia, sprawdzaj\u0105c
+    stopie\u0144 Rany. Ohydna \u017Bywotno\u015B\u0107. Nie mo\u017Cna wyrz\u0105dzi\u0107
+    ci krzywdy  go\u0142ymi r\u0119kami. Nadto, gdy atak zada ci do\u015B\u0107 obra\u017Ce\u0144, 
+    by zmniejszy\u0107 twoj\u0105 Wytrzyma\u0142o\u015B\u0107 do zera, zamiast tego 
+    powoduje Prze\u0142amanie Obrony. Je\u015Bli prze\u017Cyjesz, twoja  Wytrzyma\u0142o\u015B\u0107
+    wzrasta do po\u0142owy maksymalnej warto\u015Bci. Wzbudzenie Strachu. Wydaj 1
+    punkt Nienawi\u015Bci,  by wszyscy Bohaterowie w zasi\u0119gu wzroku otrzymali 
+    2 punkty Cienia(Groza). Postaci, kt\xF3rym nie uda si\u0119 Pr\xF3ba  Cienia
+    s\u0105 przera\u017Cone i przez reszt\u0119 potyczki nie mog\u0105  wydawa\u0107
+    Nadziei."
+  values: 050000001400000002000000050000000100000002000000

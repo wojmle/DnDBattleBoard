@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abaf5f5ae3fb3ef4abc845d5f7da5b6f, type: 3}
+  m_Name: WIelkiTrollJaskiniowy
+  m_EditorClassIdentifier: 
+  characterRace: Wielki troll jaskiniowy
+  isEnemy: 1
+  bieglosciBojowe: "Mia\u017Cd\u017Cenie 3 (6/12, Pochwycenie),  Ugryzienie 2 (6/14,
+    Celny Atak)"
+  mroczneAtrybuty: "Wzbudzenie Strachu. Wydaj 1 punkt  Nienawi\u015Bci, by wszyscy
+    Bohaterowie w zasi\u0119gu wzroku  otrzymali 2 punkty Cienia (Groza). Postaci,
+    kt\xF3rym nie uda  si\u0119 Pr\xF3ba Cienia, s\u0105 przera\u017Cone i przez
+    reszt\u0119 potyczki  nie mog\u0105 wydawa\u0107 Nadziei. Gruba Sk\xF3ra. Wydaj
+    1 punkt Nienawi\u015Bci, by doda\u0107  (2k) do testu PANCERZA. "
+  values: 0a00000050000000020000000a000000ffffffff03000000

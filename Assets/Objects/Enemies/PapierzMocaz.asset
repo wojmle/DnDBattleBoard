@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abaf5f5ae3fb3ef4abc845d5f7da5b6f, type: 3}
+  m_Name: PapierzMocaz
+  m_EditorClassIdentifier: 
+  characterRace: "Papierz - moca\u017C"
+  isEnemy: 1
+  bieglosciBojowe: Kremufka
+  mroczneAtrybuty: "No i ja si\u0119 pytam, cz\u0142owieku dumny Ty jeste\u015B z
+    siebie? Masz Ty w og\xF3le rozum i godno\u015B\u0107 cz\u0142owieka? Papie\u017Ca,
+    POLAKA WIELKIEGO obra\u017Ca\u0107? Sam B\xF3g to cia\u0142o rze\u017Abi\u0142.
+    Bije od niego \u0142aska pa\u0144ska. Gdy brano go do nieba, siedmiu anio\u0142\xF3w
+    nios\u0142o jego dusz\u0119, taki to mocarz. G\xF3ra mi\u0119\u015Bni i wiary.
+    Crossfit si\u0119 op\u0142aca. I jedzenie stejk\xF3w z kremem. Si\u0142a! Nie
+    ma opierniczania si\u0119, kule r\xF3\u017Ca\u0144cowe si\u0119 same nie przerzuc\u0105!
+    Tu \u201Cpewien energetyk\u201D nie dodaje skrzyde\u0142, to sama wiara uskrzydla!
+    Tradycji historycznej musi sta\u0107 si\u0119 zado\u015B\u0107. Ju\u017C s\u0142ysz\u0119
+    \u0142opot skrzyde\u0142. Nadje\u017Cd\u017Ca polska duma, na tarpanach siedz\u0105
+    paniska, w r\u0119ku d\u0142uga szabla. Odsiecz wiede\u0144ska, postrach Rusin\xF3w.
+    Husaria to jest pot\u0119ga. Husaria najlepsza jest. Husari\u0119 trzeba szanowa\u0107.
+    Ojciec \u015Bwi\u0119ty the best! Do boju, do boju, do boju Jan Pa-we\u0142!
+    Si\u0142acz \u015Awi\u0119ty Wniebowzi\u0119ty w figurk\u0119 z \u017Cywicy zakl\u0119ty."
+  values: 630000006300000002000000010000000300000007000000

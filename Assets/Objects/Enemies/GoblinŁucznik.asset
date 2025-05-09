@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abaf5f5ae3fb3ef4abc845d5f7da5b6f, type: 3}
+  m_Name: "Goblin\u0141ucznik"
+  m_EditorClassIdentifier: 
+  characterRace: "Goblin - \u0142ucznik"
+  isEnemy: 1
+  bieglosciBojowe: "Rogowy \u0142uk 3 (3/14, Celny Atak),  Wyszczerbiony n\xF3\u017C
+    2 (2/14)"
+  mroczneAtrybuty: "Boja\u017Aliwo\u015B\u0107. Gdy znajdziesz si\u0119 pod  wp\u0142ywem
+    zadania bojowego Przera\u017A Wroga, tracisz  1 punkt Nienawi\u015Bci. Orkowa
+    Trucizna. Je\u017Celi tw\xF3j atak zada Ran\u0119, cel  zostaje zatruty (efekty
+    dzia\u0142ania trucizny opisano na  stronie 134)."
+  values: 020000000800000001000000020000000000000001000000
