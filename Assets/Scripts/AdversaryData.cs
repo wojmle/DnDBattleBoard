@@ -18,9 +18,9 @@ namespace Assets.Scripts
         [JsonProperty("might")]
         public int Might { get; set; }
         [JsonProperty("hate")]
-        public int? Hate { get; set; }
+        public int Hate { get; set; }
         [JsonProperty("resolve")]
-        public int? Resolve { get; set; }
+        public int Resolve { get; set; }
         [JsonProperty("parry")]
         public string Parry { get; set; }
         [JsonProperty("armour")]

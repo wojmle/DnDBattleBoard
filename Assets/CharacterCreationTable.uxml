@@ -1,0 +1,11 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/CharacterCreationTable.uss?fileID=7433441132597879392&amp;guid=c8086aa19842cba45bae0c945314459c&amp;type=3#CharacterCreationTable" />
+    <engine:VisualElement name="main-root" class="panel" style="flex-grow: 0; flex-shrink: 0; flex-basis: initial;">
+        <engine:VisualElement name="header" class="header" style="flex-grow: 1; max-height: 30px;">
+            <engine:Label text="Character creation" />
+            <engine:Button text="X" name="close-button" />
+        </engine:VisualElement>
+        <engine:MultiColumnListView name="table-view" style="flex-grow: 1; margin-top: 25px; margin-bottom: 25px;" />
+        <engine:Button text="Button" name="action-button" />
+    </engine:VisualElement>
+</engine:UXML>
