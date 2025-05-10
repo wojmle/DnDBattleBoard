@@ -3,6 +3,7 @@ using UnityEngine.UIElements;
 using System;
 using System.Collections.Generic;
 using Assets.Scripts;
+using Cursor = UnityEngine.UIElements.Cursor;
 
 public class CharacterCreationTableController : MonoBehaviour
 {
@@ -40,11 +41,24 @@ public class CharacterCreationTableController : MonoBehaviour
         var closeButton = root.Q<Button>("close-button");
         var actionButton = root.Q<Button>("action-button");
         _listView = root.Q<MultiColumnListView>("table-view");
-        PopulateDropdown(); 
 
+        // Create a resize handle at bottom-right
+        _resizeHandle = new VisualElement();
+        _resizeHandle.style.position = Position.Absolute;
+        _resizeHandle.style.width = 10;
+        _resizeHandle.style.height = 10;
+        _resizeHandle.style.bottom = 0;
+        _resizeHandle.style.right = 0;
+        _resizeHandle.style.backgroundColor = new Color(1, 1, 1, 0.5f);
+
+        MakeDraggable(header);
+        MakeResizable(_resizeHandle);
+
+        root.Add(_resizeHandle);
         closeButton.clicked += ClosePanel;
         actionButton.clicked += FireSelected;
-
+        
+        PopulateDropdown();
         SetupListView();
     }
 
@@ -52,7 +66,8 @@ public class CharacterCreationTableController : MonoBehaviour
     {
         header.RegisterCallback<PointerDownEvent>(evt =>
         {
-            _dragOffset = evt.position - _rootElement.worldBound.position;
+            var pointer = new Vector2(evt.position.x, evt.position.y);
+            _dragOffset = pointer - _rootElement.worldBound.position;
             _isDragging = true;
             evt.StopPropagation();
         });
@@ -61,7 +76,8 @@ public class CharacterCreationTableController : MonoBehaviour
         {
             if (_isDragging)
             {
-                Vector2 newPos = evt.position - _dragOffset;
+                var pointer = new Vector2(evt.position.x, evt.position.y);
+                Vector2 newPos = pointer - _dragOffset;
                 _rootElement.style.left = newPos.x;
                 _rootElement.style.top = newPos.y;
             }
@@ -77,7 +93,7 @@ public class CharacterCreationTableController : MonoBehaviour
     {
         handle.RegisterCallback<PointerDownEvent>(evt =>
         {
-            _dragOffset = evt.position;
+            _dragOffset = new Vector2(evt.position.x, evt.position.y);
             _isResizing = true;
             evt.StopPropagation();
         });
@@ -86,23 +102,23 @@ public class CharacterCreationTableController : MonoBehaviour
         {
             if (_isResizing)
             {
-                var delta = evt.position - _dragOffset;
-                _dragOffset = evt.position;
+                Vector2 pointer = new Vector2(evt.position.x, evt.position.y);
+                Vector2 delta = pointer - _dragOffset;
+                _dragOffset = pointer;
 
-                var width = _rootElement.resolvedStyle.width + delta.x;
-                var height = _rootElement.resolvedStyle.height + delta.y;
+                float newWidth = _rootElement.resolvedStyle.width + delta.x;
+                float newHeight = _rootElement.resolvedStyle.height + delta.y;
 
-                _rootElement.style.width = Mathf.Max(300, width);
-                _rootElement.style.height = Mathf.Max(200, height);
+                _rootElement.style.width = Mathf.Max(300, newWidth);
+                _rootElement.style.height = Mathf.Max(200, newHeight);
             }
         });
 
-        handle.RegisterCallback<PointerUpEvent>(evt =>
+        handle.RegisterCallback<PointerUpEvent>(_ =>
         {
             _isResizing = false;
         });
     }
-
 
     public void PopulateDropdown()
     {
