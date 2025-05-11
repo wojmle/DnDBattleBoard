@@ -1,11 +1,11 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/CharacterCreationTable.uss?fileID=7433441132597879392&amp;guid=c8086aa19842cba45bae0c945314459c&amp;type=3#CharacterCreationTable" />
-    <engine:VisualElement name="main-root" class="panel" style="flex-grow: 0; flex-shrink: 0; flex-basis: initial;">
+    <engine:VisualElement name="main-root" class="panel" style="flex-grow: 0; flex-shrink: 0; flex-basis: initial; background-image: url(&quot;project://database/Assets/Tor2e-Background-Sheet.png?fileID=2800000&amp;guid=c0f5971849105ba48abb778ca768004b&amp;type=3#Tor2e-Background-Sheet&quot;);">
         <engine:VisualElement name="header" class="header" style="flex-grow: 1; max-height: 30px; flex-shrink: 0;">
             <engine:Label text="Character creation" picking-mode="Ignore" style="flex-grow: 1;" />
-            <engine:Button text="X" name="close-button" />
+            <engine:Button text="X" name="close-button" style="background-color: rgb(249, 229, 185);" />
         </engine:VisualElement>
-        <engine:MultiColumnListView name="table-view" style="flex-grow: 1; margin-top: 25px; margin-bottom: 25px;" />
-        <engine:Button text="Button" name="action-button" />
+        <engine:MultiColumnListView name="table-view" style="flex-grow: 1; margin-top: 5px; margin-bottom: 5px; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-left-color: rgba(249, 229, 185, 0); border-right-color: rgba(249, 229, 185, 0); border-top-color: rgba(249, 229, 185, 0); border-bottom-color: rgba(249, 229, 185, 0);" />
+        <engine:Button text="Button" name="action-button" style="background-color: rgb(249, 229, 185);" />
     </engine:VisualElement>
 </engine:UXML>

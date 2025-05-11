@@ -11,8 +11,8 @@ public class EnemyController : MonoBehaviour
     private string characterRace;
     private string bieglosciBojowe;
     private string mroczneAtrybuty;
-    private string combatProficiencies = "Bieglosci Bojowe: ";
-    private string fellAbilities = "Mroczne Atrybuty: ";
+    private string combatProficiencies = "BIEG£OŒCI BOJOWE";
+    private string fellAbilities = "MROCZNE ATRYBUTY:";
     public bool isEnemy;
     private Dictionary<string, int> characterStats = new Dictionary<string, int>();    // Predefined list of keys (traits or attributes for example)
 
@@ -73,13 +73,13 @@ public class EnemyController : MonoBehaviour
     public string FormatCombatProficiencies(Adversary adversary)
     {
         if (adversary.CombatProficiencies == null || adversary.CombatProficiencies.Count == 0)
-            return "<color=#C6493D><font=\"Oswald Bold SDF\"><size=12>BIEG£OŒCI BOJOWE:</size></font></color>";
+            return $"<color=#C6493D><font=\"Oswald Bold SDF\"><size=12>{combatProficiencies}</size></font></color>";
 
         // Use a StringBuilder for efficient string concatenation
         System.Text.StringBuilder formattedString = new System.Text.StringBuilder();
 
         // Add the header with red color, Oswald Bold SDF font, and size 12
-        formattedString.AppendLine("<color=#C6493D><font=\"Oswald Bold SDF\"><size=12>BIEG£OŒCI BOJOWE:</size></font></color>");
+        formattedString.AppendLine($"<color=#C6493D><font=\"Oswald Bold SDF\"><size=12>{combatProficiencies}</size></font></color>");
         bool isFirst = true;
 
         foreach (var proficiency in adversary.CombatProficiencies)
@@ -89,8 +89,12 @@ public class EnemyController : MonoBehaviour
                 // Add a new line for subsequent proficiencies
                 formattedString.AppendLine();
             }
-            // Format each proficiency with TextMesh Pro rich text tags
-            formattedString.Append($"<b>{proficiency.ProficiencyName}</b>: <i>{proficiency.ProficiencyLevel}</i> ({proficiency.ProficiencyDetails})");
+
+            string proficiencyText = $"<b>{proficiency.ProficiencyName}</b>: {proficiency.ProficiencyLevel} ({proficiency.ProficiencyDetails})";
+            var keywords = new List<string> { "Sword" };
+            proficiencyText = AddLinksToKeywords(proficiencyText, keywords); // Add links to keywords
+            formattedString.Append(proficiencyText);
+
             isFirst = false;
         }
 
@@ -100,13 +104,13 @@ public class EnemyController : MonoBehaviour
     public string FormatFellAbilities(Adversary adversary)
     {
         if (adversary.FellAbilities == null || adversary.FellAbilities.Count == 0)
-            return "<color=#C6493D><font=\"Oswald Bold SDF\"><size=12>MROCZNE ATRYBUTY:</size></font></color>";
+            return $"$<color=#C6493D><font=\"Oswald Bold SDF\"><size=12>{fellAbilities}</size></font></color>";
 
         // Use a StringBuilder for efficient string concatenation
         System.Text.StringBuilder formattedString = new System.Text.StringBuilder();
 
         // Add the header with red color, Oswald Bold SDF font, and size 12
-        formattedString.Append("<color=#C6493D><font=\"Oswald Bold SDF\"><size=12>MROCZNE ATRYBUTY:</size></font></color> ");
+        formattedString.Append($"<color=#C6493D><font=\"Oswald Bold SDF\"><size=12>{fellAbilities}</size></font></color> ");
 
         bool isFirst = true;
         foreach (var ability in adversary.FellAbilities)
@@ -118,10 +122,33 @@ public class EnemyController : MonoBehaviour
             }
 
             // Format each ability with TextMesh Pro rich text tags
-            formattedString.Append($"<b>{ability.AbilityName}</b>: <i>{ability.AbilityDescription}</i>");
+            formattedString.Append($"<b>{ability.AbilityName}</b>: {ability.AbilityDescription}");
             isFirst = false;
         }
 
         return formattedString.ToString();
+    }
+
+    public string AddLinksToKeywords(string inputText, List<string> keywords)
+    {
+        if (string.IsNullOrEmpty(inputText) || keywords == null || keywords.Count == 0)
+            return inputText;
+
+        // Iterate through the keywords and wrap them with the <link> tag
+        foreach (var keyword in keywords)
+        {
+            if (!string.IsNullOrEmpty(keyword))
+            {
+                // Use Regex to replace the keyword with a <link> tag
+                inputText = System.Text.RegularExpressions.Regex.Replace(
+                    inputText,
+                    $@"\b{System.Text.RegularExpressions.Regex.Escape(keyword)}\b", // Match whole words only
+                    $"<link={keyword}><u>{keyword}</u></link>", // Wrap the keyword with a link and underline it
+                    System.Text.RegularExpressions.RegexOptions.IgnoreCase // Case-insensitive matching
+                );
+            }
+        }
+
+        return inputText;
     }
 }
