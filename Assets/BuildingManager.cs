@@ -9,6 +9,7 @@ using Assets.Scripts;
 
 public class BuildingManager : MonoBehaviour
 {
+    public GameObject[] prefabs;
     public GameObject[] objects;
     public GameObject pendingObject;
     [SerializeField] private Material[] materials;
@@ -29,9 +30,20 @@ public class BuildingManager : MonoBehaviour
     private int objectIndex;
     public TMP_Dropdown charactersDropdown;
     private Material defaultMaterial;
-    
+
+    private string prefabPath = "Assets/Prefabs/Adversary";
+
     void Start()
     {
+        string[] guids = AssetDatabase.FindAssets("t:Prefab", new[] { prefabPath });
+        prefabs = new GameObject[guids.Length];
+
+        for (int i = 0; i < guids.Length; i++)
+        {
+            string assetPath = AssetDatabase.GUIDToAssetPath(guids[i]);
+            prefabs[i] = AssetDatabase.LoadAssetAtPath<GameObject>(assetPath);
+        }
+
         // Ensure the TMP_Dropdown is assigned
         if (charactersDropdown != null)
         {
@@ -43,7 +55,6 @@ public class BuildingManager : MonoBehaviour
 
             // Populate the TMP_Dropdown with these options
             PopulateDropdown(charactersList);
-            PopulateDropdown();
         }
     }
 
@@ -109,12 +120,6 @@ public class BuildingManager : MonoBehaviour
 
         // Add the new options to the dropdown
         charactersDropdown.AddOptions(tmpOptions);
-    }
-
-    public void PopulateDropdown()
-    {
-        var adversaryConverter = new AdversaryToJsonClassConverter();
-        var adversaries = adversaryConverter.CreateAdversaryList();
     }
 
     public void PlaceObject()
@@ -196,11 +201,23 @@ public class BuildingManager : MonoBehaviour
         }
     }
 
-    public void InsertObject()
+    public void InsertObject(Adversary adversary)
     {
-        var selectedObjectFromDropdown = objects.Where(x=>x.gameObject.name == charactersDropdown.options[charactersDropdown.value].text).FirstOrDefault();
-        pendingObject = Instantiate(selectedObjectFromDropdown, position, transform.rotation);
-        defaultMaterial = pendingObject.GetComponent<MeshRenderer>().material;
+        var selectedObjectFromDropdown = prefabs.FirstOrDefault(x => x.gameObject.name == adversary.Name);
+        if (selectedObjectFromDropdown != null)
+        {
+            pendingObject = Instantiate(selectedObjectFromDropdown, position, transform.rotation);
+
+            pendingObject.tag = "Object";
+
+            // Get the EnemyController component from the instantiated object
+            var enemyController = pendingObject.GetComponent<EnemyController>();
+            if (enemyController != null)
+            {
+                enemyController.adversary = adversary;
+            }
+            defaultMaterial = pendingObject.GetComponent<MeshRenderer>().material;
+        }
     }
 
     public void ToggleGrid()

@@ -1,25 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Assets.Scripts;
+using TMPro;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    public CharacterObject characterObject;
+    public Adversary adversary;
     private string characterRace;
     private string bieglosciBojowe;
     private string mroczneAtrybuty;
+    private string combatProficiencies = "Bieglosci Bojowe: ";
+    private string fellAbilities = "Mroczne Atrybuty: ";
     public bool isEnemy;
-    private Dictionary<string, int> characterStats = new Dictionary<string, int>();
+    private Dictionary<string, int> characterStats = new Dictionary<string, int>();    // Predefined list of keys (traits or attributes for example)
 
     // Start is called before the first frame update
     void Start()
     {
-        characterRace = characterObject.characterRace;
-        bieglosciBojowe = characterObject.bieglosciBojowe;
-        mroczneAtrybuty = characterObject.mroczneAtrybuty;
-        isEnemy = characterObject.isEnemy;
-        characterStats = new Dictionary<string, int>(characterObject.GetValues());
+        characterRace = adversary.Race.RaceName;
+        bieglosciBojowe = FormatCombatProficiencies(adversary);
+        mroczneAtrybuty = FormatFellAbilities(adversary);
+        isEnemy = true;
+        characterStats = new Dictionary<string, int>
+        {            
+            { nameof(Adversary.AttributeLevel), adversary.AttributeLevel },           
+            { nameof(Adversary.Endurance), adversary.Endurance },
+            { nameof(Adversary.Might), adversary.Might },
+            { nameof(Adversary.Hate), adversary.Hate },
+            { nameof(Adversary.Parry), 0 },
+            { nameof(Adversary.Armour), adversary.Armour }
+        };
     }
 
     public void AddPoint(string key)
@@ -56,5 +68,60 @@ public class EnemyController : MonoBehaviour
     public Dictionary<string,int> GetCharacterStats()
     {
         return characterStats;
+    }
+
+    public string FormatCombatProficiencies(Adversary adversary)
+    {
+        if (adversary.CombatProficiencies == null || adversary.CombatProficiencies.Count == 0)
+            return "<color=#C6493D><font=\"Oswald Bold SDF\"><size=12>BIEG£OŒCI BOJOWE:</size></font></color>";
+
+        // Use a StringBuilder for efficient string concatenation
+        System.Text.StringBuilder formattedString = new System.Text.StringBuilder();
+
+        // Add the header with red color, Oswald Bold SDF font, and size 12
+        formattedString.AppendLine("<color=#C6493D><font=\"Oswald Bold SDF\"><size=12>BIEG£OŒCI BOJOWE:</size></font></color>");
+        bool isFirst = true;
+
+        foreach (var proficiency in adversary.CombatProficiencies)
+        {
+            if (!isFirst)
+            {
+                // Add a new line for subsequent proficiencies
+                formattedString.AppendLine();
+            }
+            // Format each proficiency with TextMesh Pro rich text tags
+            formattedString.Append($"<b>{proficiency.ProficiencyName}</b>: <i>{proficiency.ProficiencyLevel}</i> ({proficiency.ProficiencyDetails})");
+            isFirst = false;
+        }
+
+        return formattedString.ToString();
+    }
+
+    public string FormatFellAbilities(Adversary adversary)
+    {
+        if (adversary.FellAbilities == null || adversary.FellAbilities.Count == 0)
+            return "<color=#C6493D><font=\"Oswald Bold SDF\"><size=12>MROCZNE ATRYBUTY:</size></font></color>";
+
+        // Use a StringBuilder for efficient string concatenation
+        System.Text.StringBuilder formattedString = new System.Text.StringBuilder();
+
+        // Add the header with red color, Oswald Bold SDF font, and size 12
+        formattedString.Append("<color=#C6493D><font=\"Oswald Bold SDF\"><size=12>MROCZNE ATRYBUTY:</size></font></color> ");
+
+        bool isFirst = true;
+        foreach (var ability in adversary.FellAbilities)
+        {
+            if (!isFirst)
+            {
+                // Add a new line for subsequent abilities
+                formattedString.AppendLine();
+            }
+
+            // Format each ability with TextMesh Pro rich text tags
+            formattedString.Append($"<b>{ability.AbilityName}</b>: <i>{ability.AbilityDescription}</i>");
+            isFirst = false;
+        }
+
+        return formattedString.ToString();
     }
 }

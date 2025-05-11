@@ -7,6 +7,8 @@ using Cursor = UnityEngine.UIElements.Cursor;
 
 public class CharacterCreationTableController : MonoBehaviour
 {
+    private DragManipulator dragManipulator;
+    private ResizeManipulator resizeManipulator;
     public VisualTreeAsset panelAsset;
 
     public static event Action<Adversary> OnActionButtonClicked;
@@ -16,10 +18,10 @@ public class CharacterCreationTableController : MonoBehaviour
     private List<Adversary> _items;
     public PanelSettings panelSettings;
     private Vector2 _dragOffset;
-    private bool _isDragging;
     private bool _isResizing;
     private VisualElement _rootElement;
     private VisualElement _resizeHandle;
+    private BuildingManager buildingManager;
 
     public void ShowPanel()
     {
@@ -36,88 +38,31 @@ public class CharacterCreationTableController : MonoBehaviour
     private void InitializePanel(VisualElement root)
     {
         _rootElement = root;
+        dragManipulator = new DragManipulator();
 
         var header = root.Q<VisualElement>("header");
+        if (header != null)
+        {
+            header.AddManipulator(dragManipulator);
+        }
+
+        resizeManipulator = new ResizeManipulator();
+        var main_root = root.Q<VisualElement>("main-root");
+        if (main_root != null) {
+            main_root.AddManipulator(resizeManipulator);
+        }
+
+        buildingManager = FindFirstObjectByType<BuildingManager>();
+
         var closeButton = root.Q<Button>("close-button");
         var actionButton = root.Q<Button>("action-button");
         _listView = root.Q<MultiColumnListView>("table-view");
 
-        // Create a resize handle at bottom-right
-        _resizeHandle = new VisualElement();
-        _resizeHandle.style.position = Position.Absolute;
-        _resizeHandle.style.width = 10;
-        _resizeHandle.style.height = 10;
-        _resizeHandle.style.bottom = 0;
-        _resizeHandle.style.right = 0;
-        _resizeHandle.style.backgroundColor = new Color(1, 1, 1, 0.5f);
-
-        MakeDraggable(header);
-        MakeResizable(_resizeHandle);
-
-        root.Add(_resizeHandle);
         closeButton.clicked += ClosePanel;
         actionButton.clicked += FireSelected;
         
         PopulateDropdown();
         SetupListView();
-    }
-
-    private void MakeDraggable(VisualElement header)
-    {
-        header.RegisterCallback<PointerDownEvent>(evt =>
-        {
-            var pointer = new Vector2(evt.position.x, evt.position.y);
-            _dragOffset = pointer - _rootElement.worldBound.position;
-            _isDragging = true;
-            evt.StopPropagation();
-        });
-
-        header.RegisterCallback<PointerMoveEvent>(evt =>
-        {
-            if (_isDragging)
-            {
-                var pointer = new Vector2(evt.position.x, evt.position.y);
-                Vector2 newPos = pointer - _dragOffset;
-                _rootElement.style.left = newPos.x;
-                _rootElement.style.top = newPos.y;
-            }
-        });
-
-        header.RegisterCallback<PointerUpEvent>(evt =>
-        {
-            _isDragging = false;
-        });
-    }
-
-    private void MakeResizable(VisualElement handle)
-    {
-        handle.RegisterCallback<PointerDownEvent>(evt =>
-        {
-            _dragOffset = new Vector2(evt.position.x, evt.position.y);
-            _isResizing = true;
-            evt.StopPropagation();
-        });
-
-        handle.RegisterCallback<PointerMoveEvent>(evt =>
-        {
-            if (_isResizing)
-            {
-                Vector2 pointer = new Vector2(evt.position.x, evt.position.y);
-                Vector2 delta = pointer - _dragOffset;
-                _dragOffset = pointer;
-
-                float newWidth = _rootElement.resolvedStyle.width + delta.x;
-                float newHeight = _rootElement.resolvedStyle.height + delta.y;
-
-                _rootElement.style.width = Mathf.Max(300, newWidth);
-                _rootElement.style.height = Mathf.Max(200, newHeight);
-            }
-        });
-
-        handle.RegisterCallback<PointerUpEvent>(_ =>
-        {
-            _isResizing = false;
-        });
     }
 
     public void PopulateDropdown()
@@ -137,10 +82,10 @@ public class CharacterCreationTableController : MonoBehaviour
 
     private void FireSelected()
     {
-        if (_listView.selectedIndex >= 0 && _items != null)
+        if (_items != null)
         {
             var selected = _items[_listView.selectedIndex];
-            OnActionButtonClicked?.Invoke(selected);
+            buildingManager.InsertObject(selected);
         }
     }
 

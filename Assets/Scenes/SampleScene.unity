@@ -398,7 +398,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: "NIENAWI\u015A\u0106"
+          m_StringArgument: Hate
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &133648239
@@ -726,7 +726,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &159791611
 RectTransform:
   m_ObjectHideFlags: 0
@@ -741,10 +741,6 @@ RectTransform:
   m_Children:
   - {fileID: 405198226}
   - {fileID: 711136128}
-  - {fileID: 1787850463}
-  - {fileID: 1208756215}
-  - {fileID: 1601571358}
-  - {fileID: 474104035}
   - {fileID: 1838750276}
   - {fileID: 385930802}
   - {fileID: 710087815}
@@ -774,6 +770,10 @@ RectTransform:
   - {fileID: 1519122939}
   - {fileID: 13727803}
   - {fileID: 1352663726}
+  - {fileID: 1787850463}
+  - {fileID: 1208756215}
+  - {fileID: 1601571358}
+  - {fileID: 474104035}
   m_Father: {fileID: 214128369}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
@@ -1358,7 +1358,7 @@ GameObject:
   - component: {fileID: 347861226}
   - component: {fileID: 347861225}
   m_Layer: 5
-  m_Name: OBRONA
+  m_Name: Parry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2048,7 +2048,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 474104034}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2057,7 +2057,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 118.5, y: -291.3}
+  m_AnchoredPosition: {x: 118.49991, y: -285.65}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &474104036
@@ -3398,7 +3398,7 @@ MonoBehaviour:
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
-  m_ActiveFontFeatures: 00000000
+  m_ActiveFontFeatures: 6e72656b
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
@@ -4158,7 +4158,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: "WYTRZYMA\u0141O\u015A\u0106"
+          m_StringArgument: Endurance
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &803107532
@@ -4427,7 +4427,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: "NIENAWI\u015A\u0106"
+          m_StringArgument: Hate
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &856805359
@@ -4983,7 +4983,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: "POT\u0118GA"
+          m_StringArgument: Might
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &999376961
@@ -5552,7 +5552,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1208756214}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5561,7 +5561,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 227, y: -230}
+  m_AnchoredPosition: {x: 227.00005, y: -230.00009}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1208756216
@@ -5692,6 +5692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f9fe63f526671549b82d7852d0f66c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefabs: []
   objects:
   - {fileID: 806247449993818778, guid: a4b58b704f151de4ead59179ce2c6313, type: 3}
   - {fileID: 806247449993818778, guid: aa8bca94e5abc634296debfa29f2ce34, type: 3}
@@ -6526,7 +6527,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: PANCERZ
+          m_StringArgument: Armour
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1411292764
@@ -6659,7 +6660,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: "ZAJAD\u0141O\u015A\u0106"
+          m_StringArgument: AttributeLevel
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1432770899
@@ -6712,7 +6713,7 @@ GameObject:
   - component: {fileID: 1448343476}
   - component: {fileID: 1448343475}
   m_Layer: 5
-  m_Name: "WYTRZYMA\u0141O\u015A\u0106"
+  m_Name: Endurance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7082,7 +7083,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: OBRONA
+          m_StringArgument: Parry
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1521743014
@@ -7148,7 +7149,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1601571357}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7157,7 +7158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 227, y: -294}
+  m_AnchoredPosition: {x: 227.00005, y: -288.3499}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1601571359
@@ -7271,7 +7272,7 @@ GameObject:
   - component: {fileID: 1606245582}
   - component: {fileID: 1606245581}
   m_Layer: 5
-  m_Name: "NIENAWI\u015A\u0106"
+  m_Name: Hate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7649,7 +7650,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: "POT\u0118GA"
+          m_StringArgument: Might
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1659609189
@@ -7838,7 +7839,7 @@ GameObject:
   - component: {fileID: 1668585769}
   - component: {fileID: 1668585768}
   m_Layer: 5
-  m_Name: "ZAJAD\u0141O\u015A\u0106"
+  m_Name: Attribute Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7974,7 +7975,7 @@ GameObject:
   - component: {fileID: 1707824756}
   - component: {fileID: 1707824755}
   m_Layer: 5
-  m_Name: PANCERZ
+  m_Name: Armour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8246,7 +8247,7 @@ GameObject:
   - component: {fileID: 1771326511}
   - component: {fileID: 1771326510}
   m_Layer: 5
-  m_Name: "POT\u0118GA"
+  m_Name: Might
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8470,7 +8471,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1787850462}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8479,7 +8480,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 118.5, y: -230}
+  m_AnchoredPosition: {x: 118.49991, y: -230.00009}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1787850464
@@ -8990,7 +8991,7 @@ MonoBehaviour:
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
-  m_ActiveFontFeatures: 00000000
+  m_ActiveFontFeatures: 6e72656b
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
@@ -9112,7 +9113,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: "WYTRZYMA\u0141O\u015A\u0106"
+          m_StringArgument: Endurance
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1874535575
@@ -9320,7 +9321,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: PANCERZ
+          m_StringArgument: Armour
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1930224504
@@ -9528,7 +9529,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: OBRONA
+          m_StringArgument: Parry
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1969698888
@@ -9661,7 +9662,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: "ZAJAD\u0141O\u015A\u0106"
+          m_StringArgument: AttributeLevel
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1985105977
