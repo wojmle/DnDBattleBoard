@@ -7,5 +7,9 @@
         </engine:VisualElement>
         <engine:MultiColumnListView name="table-view" style="flex-grow: 1; margin-top: 5px; margin-bottom: 5px; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-left-color: rgba(249, 229, 185, 0); border-right-color: rgba(249, 229, 185, 0); border-top-color: rgba(249, 229, 185, 0); border-bottom-color: rgba(249, 229, 185, 0);" />
         <engine:Button text="Button" name="action-button" style="background-color: rgb(249, 229, 185);" />
+        <engine:VisualElement name="resize-handle-top" class="resize-handle resize-handle-top" style="flex-grow: 1;" />
+        <engine:VisualElement name="resize-handle-bottom" class="resize-handle resize-handle-bottom" style="flex-grow: 1;" />
+        <engine:VisualElement name="resize-handle-left" class="resize-handle resize-handle-left" style="flex-grow: 1;" />
+        <engine:VisualElement name="resize-handle-right" class="resize-handle resize-handle-right" style="flex-grow: 1;" />
     </engine:VisualElement>
 </engine:UXML>

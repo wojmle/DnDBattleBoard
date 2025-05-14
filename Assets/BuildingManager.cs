@@ -71,13 +71,15 @@ public class BuildingManager : MonoBehaviour
             UpdateMaterials();
             if (gridOn)
             {
+                //ToDo: Fix position and offset it on vertical direction
                 pendingObject.transform.position = new Vector3(
                     RoundToNearestGrid(position.x),
-                    RoundToNearestGrid(position.y),
+                    position.y,
                     RoundToNearestGrid(position.z));
             }
             else
-            {
+            {               
+                //ToDo: Fix position and offset it on vertical direction
                 pendingObject.transform.position = position;
             }
 
@@ -207,8 +209,21 @@ public class BuildingManager : MonoBehaviour
         if (selectedObjectFromDropdown != null)
         {
             pendingObject = Instantiate(selectedObjectFromDropdown, position, transform.rotation);
-
+            pendingObject.transform.rotation = Quaternion.Euler(90, 0, 0);
             pendingObject.tag = "Object";
+
+            // Offset by half its height along its local Y direction
+            var renderers = pendingObject.GetComponentsInChildren<Renderer>();
+            if (renderers.Length > 0)
+            {
+                Bounds combinedBounds = renderers[0].bounds;
+                for (int i = 1; i < renderers.Length; i++)
+                    combinedBounds.Encapsulate(renderers[i].bounds);
+
+                float halfHeight = combinedBounds.size.y / 2f;
+                // Offset along the object's local Y (up) direction
+                pendingObject.transform.position += Vector3.up * halfHeight;
+            }
 
             // Get the EnemyController component from the instantiated object
             var enemyController = pendingObject.GetComponent<EnemyController>();
@@ -234,13 +249,8 @@ public class BuildingManager : MonoBehaviour
 
     float RoundToNearestGrid(float position)
     {
-        float xDiff = position % gridSize;
-        position -= xDiff;
-        if (xDiff > (gridSize/2))
-        {
-            position += gridSize;
-        }
-        return position;
+        float cellIndex = Mathf.Floor(position / gridSize);
+        return (cellIndex * gridSize) + (gridSize / 2f);
     }
 
     public void RotateObject()

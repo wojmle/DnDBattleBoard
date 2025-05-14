@@ -15,3 +15,31 @@
     justify-content: space-between;
     -unity-font-style: bold;
 }
+
+.resize-handle {
+    position: absolute;
+    z-index: 100;
+    background-color: transparent; /* or a semi-transparent color for debugging */
+    pointer-events: auto;
+}
+
+.resize-handle-top {
+    top: 0; left: 0; right: 0;
+    height: 6px;
+    cursor: n-resize;
+}
+.resize-handle-right {
+    top: 0; right: 0; bottom: 0;
+    width: 6px;
+    cursor: e-resize;
+}
+.resize-handle-bottom {
+    left: 0; right: 0; bottom: 0;
+    height: 6px;
+    cursor: s-resize;
+}
+.resize-handle-left {
+    top: 0; left: 0; bottom: 0;
+    width: 6px;
+    cursor: w-resize;
+}

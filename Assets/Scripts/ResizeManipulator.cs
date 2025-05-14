@@ -9,11 +9,12 @@ public class ResizeManipulator : PointerManipulator
     private Vector2 m_StartSize;
     private VisualElement m_WindowContainer;
 
-    public ResizeManipulator()
+    public ResizeManipulator(VisualElement windowContainer)
     {
         m_PointerId = -1;
         activators.Add(new ManipulatorActivationFilter { button = MouseButton.LeftMouse });
-        m_Active = false;
+        m_Active = false; 
+        m_WindowContainer = windowContainer;
     }
 
     protected override void RegisterCallbacksOnTarget()
@@ -42,7 +43,6 @@ public class ResizeManipulator : PointerManipulator
         {
             m_Start = e.position;
             m_PointerId = e.pointerId;
-            m_WindowContainer = target;
 
             // Store the initial size of the window container
             m_StartSize = new Vector2(
