@@ -9,7 +9,8 @@ using Assets.Scripts;
 
 public class BuildingManager : MonoBehaviour
 {
-    public GameObject[] prefabs;
+    public GameObject[] adversaryPrefabs;
+    public GameObject[] allyPrefabs;
     public GameObject[] objects;
     public GameObject pendingObject;
     [SerializeField] private Material[] materials;
@@ -28,33 +29,28 @@ public class BuildingManager : MonoBehaviour
     [SerializeField] private Toggle gridToggle;
     private Material lineMaterial;
     private int objectIndex;
-    public TMP_Dropdown charactersDropdown;
     private Material defaultMaterial;
 
-    private string prefabPath = "Assets/Prefabs/Adversary";
+    private string adversaryPrefabPath = "Assets/Prefabs/Adversary";
+    private string allyPrefabPath = "Assets/Prefabs/Ally";
 
     void Start()
     {
-        string[] guids = AssetDatabase.FindAssets("t:Prefab", new[] { prefabPath });
-        prefabs = new GameObject[guids.Length];
+        string[] adversaryGuids = AssetDatabase.FindAssets("t:Prefab", new[] { adversaryPrefabPath });
+        string[] allyGuids = AssetDatabase.FindAssets("t:Prefab", new[] { allyPrefabPath });
+        adversaryPrefabs = new GameObject[adversaryGuids.Length];
+        allyPrefabs = new GameObject[allyGuids.Length];
 
-        for (int i = 0; i < guids.Length; i++)
+        for (int i = 0; i < adversaryGuids.Length; i++)
         {
-            string assetPath = AssetDatabase.GUIDToAssetPath(guids[i]);
-            prefabs[i] = AssetDatabase.LoadAssetAtPath<GameObject>(assetPath);
+            string assetPath = AssetDatabase.GUIDToAssetPath(adversaryGuids[i]);
+            adversaryPrefabs[i] = AssetDatabase.LoadAssetAtPath<GameObject>(assetPath);
         }
 
-        // Ensure the TMP_Dropdown is assigned
-        if (charactersDropdown != null)
+        for (int i = 0; i < allyGuids.Length; i++)
         {
-            var charactersList = new List<string>();
-            foreach(var character in objects)
-            {
-                charactersList.Add(character.gameObject.name);
-            }
-
-            // Populate the TMP_Dropdown with these options
-            PopulateDropdown(charactersList);
+            string assetPath = AssetDatabase.GUIDToAssetPath(allyGuids[i]);
+            allyPrefabs[i] = AssetDatabase.LoadAssetAtPath<GameObject>(assetPath);
         }
     }
 
@@ -103,25 +99,6 @@ public class BuildingManager : MonoBehaviour
                 RotateObject();
             }
         }
-    }
-
-    public void PopulateDropdown(List<string> options)
-    {
-        // Clear existing options (optional)
-        charactersDropdown.ClearOptions();
-
-        // Create a new list to hold the TMP_Dropdown.OptionData objects
-        List<TMP_Dropdown.OptionData> tmpOptions = new List<TMP_Dropdown.OptionData>();
-
-        // Loop through the provided string options and create new OptionData objects
-        foreach (string option in options)
-        {
-            TMP_Dropdown.OptionData newOption = new TMP_Dropdown.OptionData(option);
-            tmpOptions.Add(newOption);
-        }
-
-        // Add the new options to the dropdown
-        charactersDropdown.AddOptions(tmpOptions);
     }
 
     public void PlaceObject()
@@ -203,9 +180,20 @@ public class BuildingManager : MonoBehaviour
         }
     }
 
-    public void InsertObject(Adversary adversary)
+    public void InsertObject(IModelObject modelObject)
     {
-        var selectedObjectFromDropdown = prefabs.FirstOrDefault(x => x.gameObject.name == adversary.Name);
+        var selectedObjectFromDropdown = new GameObject();
+
+        if (modelObject is Adversary)
+        {
+            selectedObjectFromDropdown = adversaryPrefabs.FirstOrDefault(x => x.gameObject.name == modelObject.Name);
+        }
+        else if (modelObject is Ally)
+        {
+            selectedObjectFromDropdown = allyPrefabs.FirstOrDefault(x => x.gameObject.name == modelObject.Name);
+        }
+
+        selectedObjectFromDropdown = adversaryPrefabs.FirstOrDefault(x => x.gameObject.name == modelObject.Name);
         if (selectedObjectFromDropdown != null)
         {
             pendingObject = Instantiate(selectedObjectFromDropdown, position, transform.rotation);
@@ -227,11 +215,20 @@ public class BuildingManager : MonoBehaviour
 
             // Get the EnemyController component from the instantiated object
             var enemyController = pendingObject.GetComponent<EnemyController>();
-            if (enemyController != null)
+            if (enemyController != null && modelObject is Adversary {} adversary)
             {
-                enemyController.adversary = adversary;
+                enemyController.adversary = adversary;          
+                defaultMaterial = pendingObject.GetComponent<MeshRenderer>().material;
+                return;
             }
-            defaultMaterial = pendingObject.GetComponent<MeshRenderer>().material;
+
+            var allyController = pendingObject.GetComponent<AllyController>();
+            if (allyController != null && modelObject is Ally { } ally)
+            {
+                allyController.allyObject = ally; 
+                defaultMaterial = pendingObject.GetComponent<MeshRenderer>().material;
+                return;
+            }
         }
     }
 

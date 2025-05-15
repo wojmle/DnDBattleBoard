@@ -1,0 +1,19 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/CharacterCreationTable.uss?fileID=7433441132597879392&amp;guid=c8086aa19842cba45bae0c945314459c&amp;type=3#CharacterCreationTable" />
+    <engine:VisualElement name="main-root" class="panel" style="flex-grow: 0; flex-shrink: 0; flex-basis: initial; background-image: url(&quot;project://database/Assets/Tor2e-Background-Sheet.png?fileID=2800000&amp;guid=c0f5971849105ba48abb778ca768004b&amp;type=3#Tor2e-Background-Sheet&quot;); height: 220px;">
+        <engine:VisualElement name="header" class="header" style="flex-grow: 1; max-height: 30px; flex-shrink: 0;">
+            <engine:Label text="Ally creation" picking-mode="Ignore" style="flex-grow: 1;" />
+            <engine:Button text="X" name="close-button" style="background-color: rgb(249, 229, 185);" />
+        </engine:VisualElement>
+        <engine:VisualElement name="ally-form" style="flex-grow: 1; justify-content: space-evenly;">
+            <engine:TextField label="Name" placeholder-text="Enter ally name" name="ally-name" password="false" />
+            <engine:DropdownField label="Race" name="race-dropdown" />
+            <engine:DropdownField label="Model" name="model-dropdown" />
+        </engine:VisualElement>
+        <engine:Button text="Create" name="action-button" style="background-color: rgb(249, 229, 185);" />
+        <engine:VisualElement name="resize-handle-top" class="resize-handle resize-handle-top" style="flex-grow: 1;" />
+        <engine:VisualElement name="resize-handle-bottom" class="resize-handle resize-handle-bottom" style="flex-grow: 1;" />
+        <engine:VisualElement name="resize-handle-left" class="resize-handle resize-handle-left" style="flex-grow: 1;" />
+        <engine:VisualElement name="resize-handle-right" class="resize-handle resize-handle-right" style="flex-grow: 1;" />
+    </engine:VisualElement>
+</engine:UXML>

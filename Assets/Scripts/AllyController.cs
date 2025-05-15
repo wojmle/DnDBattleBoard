@@ -5,15 +5,15 @@ using UnityEngine;
 
 public class AllyController : MonoBehaviour
 {
-    public AllyObject allyObject;
+    public Ally allyObject;
     private string characterName;
     private string characterRace;
 
     // Start is called before the first frame update
     void Start()
     {
-        characterRace = allyObject.characterRace;
-        characterName = allyObject.characterName;
+        characterRace = allyObject.Race;
+        characterName = allyObject.Name;
     }
 
     public string GetCharacterRace()

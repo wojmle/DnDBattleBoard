@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace Assets.Scripts
 {
-    public class Adversary
+    public class Adversary : IModelObject
     {
         [JsonProperty("adversary_id")]
         public int AdversaryId { get; set; }
