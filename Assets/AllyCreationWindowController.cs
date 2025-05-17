@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Assets.Scripts;
 using Newtonsoft.Json;
 using UnityEngine;
@@ -115,6 +116,7 @@ namespace Assets
             }
         
             _raceDropdown.choices.AddRange(races);
+            _raceDropdown.value = _raceDropdown.choices.FirstOrDefault();
             _raceDropdown.choices.AddRange(raceModelDictionary[_raceDropdown.value]);
         }
 

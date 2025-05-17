@@ -33,8 +33,15 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (IsTextFieldFocused())
+            return;
         HandleMovementInput();
         HandleMouseInput();
+    }
+
+    private bool IsTextFieldFocused()
+    {
+       return true;
     }
 
     void HandleMouseInput()
