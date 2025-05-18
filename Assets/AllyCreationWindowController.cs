@@ -31,6 +31,11 @@ namespace Assets
         private Dictionary<string, List<string>> raceModelDictionary;
         public static string allyPath = "Assets/Prefabs/Ally";
 
+        private void OnDestroy()
+        {
+            EventManager.TriggerEvent(nameof(FocusOutEvent));
+        }
+
         public void ShowPanel()
         {
             if (_panelGO != null) return;
@@ -61,6 +66,14 @@ namespace Assets
             var resize_handle_right = root.Q<VisualElement>("resize-handle-right");
             if (resize_handle_top != null && resize_handle_bottom != null && resize_handle_right != null && resize_handle_left != null && main_root != null)
             {
+                main_root.RegisterCallback<FocusInEvent>(evt =>
+                {
+                    EventManager.TriggerEvent(nameof(FocusInEvent));
+                } );
+                main_root.RegisterCallback<FocusOutEvent>(evt =>
+                {
+                    EventManager.TriggerEvent(nameof(FocusOutEvent));
+                });
                 resize_handle_top.AddManipulator(new ResizeManipulator(main_root));
                 resize_handle_bottom.AddManipulator(new ResizeManipulator(main_root));
                 resize_handle_left.AddManipulator(new ResizeManipulator(main_root));
@@ -85,7 +98,6 @@ namespace Assets
 
             closeButton.clicked += ClosePanel;
             actionButton.clicked += FireSelected;
-
         }
 
         public void PopulateRaceDropdown()
@@ -124,6 +136,7 @@ namespace Assets
         {
             if (_panelGO != null)
             {
+                EventManager.TriggerEvent(nameof(FocusOutEvent));
                 Destroy(_panelGO);
                 _panelGO = null;
             }

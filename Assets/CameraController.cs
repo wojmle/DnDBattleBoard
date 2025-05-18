@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Assets;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class CameraController : MonoBehaviour
 {
@@ -23,25 +25,40 @@ public class CameraController : MonoBehaviour
     public Vector3 rotateStartPosition;
     public Vector3 rotateCurrentPosition;
 
+    private bool _inputEnabled = true;
+
     void Start()
     {
         newPosition = transform.position;
         newRotation = transform.rotation;
         newZoom = cameraTransform.localPosition;
+        EventManager.AddListener(nameof(FocusInEvent), DisableInput);
+        EventManager.AddListener(nameof(FocusOutEvent), EnableInput);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (IsTextFieldFocused())
+        if (!_inputEnabled)
             return;
         HandleMovementInput();
         HandleMouseInput();
     }
 
-    private bool IsTextFieldFocused()
+    void OnDestroy()
     {
-       return true;
+        EventManager.RemoveListener(nameof(FocusInEvent), DisableInput);
+        EventManager.RemoveListener(nameof(FocusOutEvent), EnableInput);
+    }
+
+    public void EnableInput()
+    {
+        _inputEnabled = true;
+    }
+
+    public void DisableInput()
+    {
+        _inputEnabled = false;
     }
 
     void HandleMouseInput()
