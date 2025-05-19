@@ -188,13 +188,12 @@ public class BuildingManager : MonoBehaviour
         {
             selectedObjectFromDropdown = adversaryPrefabs.FirstOrDefault(x => x.gameObject.name == modelObject.Name);
         }
-        else if (modelObject is Ally)
+        else if (modelObject is Ally {} ally)
         {
-            selectedObjectFromDropdown = allyPrefabs.FirstOrDefault(x => x.gameObject.name == modelObject.Name);
+            selectedObjectFromDropdown = allyPrefabs.FirstOrDefault(x => x.gameObject.name == ally.Model);
         }
 
-        selectedObjectFromDropdown = adversaryPrefabs.FirstOrDefault(x => x.gameObject.name == modelObject.Name);
-        if (selectedObjectFromDropdown != null)
+        if (selectedObjectFromDropdown != new GameObject())
         {
             pendingObject = Instantiate(selectedObjectFromDropdown, position, transform.rotation);
             pendingObject.transform.rotation = Quaternion.Euler(90, 0, 0);

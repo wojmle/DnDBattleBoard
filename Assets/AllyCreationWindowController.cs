@@ -84,7 +84,7 @@ namespace Assets
 
             var closeButton = root.Q<Button>("close-button");
             var actionButton = root.Q<Button>("action-button");
-            _nameTextField = root.Q<TextField>("name");
+            _nameTextField = root.Q<TextField>("ally-name");
             _raceDropdown = root.Q<DropdownField>("race-dropdown");
             _modelDropdown = root.Q<DropdownField>("model-dropdown");
 
@@ -129,7 +129,7 @@ namespace Assets
         
             _raceDropdown.choices.AddRange(races);
             _raceDropdown.value = _raceDropdown.choices.FirstOrDefault();
-            _raceDropdown.choices.AddRange(raceModelDictionary[_raceDropdown.value]);
+            _modelDropdown.choices.AddRange(raceModelDictionary[_raceDropdown.value]);
         }
 
         private void ClosePanel()
