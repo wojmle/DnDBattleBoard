@@ -198,7 +198,7 @@ public class BuildingManager : MonoBehaviour
         if (selectedObjectFromDropdown != new GameObject())
         {
             pendingObject = Instantiate(selectedObjectFromDropdown, position, transform.rotation);
-            pendingObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+            pendingObject.transform.rotation = Quaternion.Euler(90, 0, 0);
             pendingObject.tag = "Object";
 
             // Offset by half its height along its local Y direction
@@ -252,6 +252,6 @@ public class BuildingManager : MonoBehaviour
 
     public void RotateObject()
     {
-        pendingObject.transform.Rotate(Vector3.up, rotateAmount);
+        pendingObject.transform.Rotate(Vector3.left, rotateAmount);
     }
 }
