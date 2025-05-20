@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using Assets.Scripts;
 using Cursor = UnityEngine.UIElements.Cursor;
+using Assets;
 
 public class CharacterCreationTableController : MonoBehaviour
 {
@@ -52,6 +53,14 @@ public class CharacterCreationTableController : MonoBehaviour
         var resize_handle_left = root.Q<VisualElement>("resize-handle-left");
         var resize_handle_right = root.Q<VisualElement>("resize-handle-right");
         if (resize_handle_top != null && resize_handle_bottom != null && resize_handle_right != null && resize_handle_left != null && main_root != null) {
+            main_root.RegisterCallback<FocusInEvent>(evt =>
+            {
+                EventManager.TriggerEvent(nameof(FocusInEvent));
+            });
+            main_root.RegisterCallback<FocusOutEvent>(evt =>
+            {
+                EventManager.TriggerEvent(nameof(FocusOutEvent));
+            });
             resize_handle_top.AddManipulator(new ResizeManipulator(main_root));
             resize_handle_bottom.AddManipulator(new ResizeManipulator(main_root));
             resize_handle_left.AddManipulator(new ResizeManipulator(main_root));
@@ -165,6 +174,7 @@ public class CharacterCreationTableController : MonoBehaviour
         _listView.sortingMode = ColumnSortingMode.Default;
         _listView.itemsSource = _items;
         _listView.fixedItemHeight = 30;
+        _listView.selectedIndex = -1;
         _listView.selectionType = SelectionType.Single;
     }
 }

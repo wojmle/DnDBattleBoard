@@ -30,6 +30,7 @@ public class BuildingManager : MonoBehaviour
     private Material lineMaterial;
     private int objectIndex;
     private Material defaultMaterial;
+    private float pendingObjectOffset = 0f;
 
     private string adversaryPrefabPath = "Assets/Prefabs/Adversary";
     private string allyPrefabPath = "Assets/Prefabs/Ally";
@@ -67,16 +68,17 @@ public class BuildingManager : MonoBehaviour
             UpdateMaterials();
             if (gridOn)
             {
-                //ToDo: Fix position and offset it on vertical direction
                 pendingObject.transform.position = new Vector3(
                     RoundToNearestGrid(position.x),
-                    position.y,
+                    position.y + pendingObjectOffset,
                     RoundToNearestGrid(position.z));
             }
             else
-            {               
-                //ToDo: Fix position and offset it on vertical direction
-                pendingObject.transform.position = position;
+            {
+                pendingObject.transform.position = new Vector3(
+                    position.x,
+                    position.y + pendingObjectOffset,
+                    position.z);
             }
 
             if (Input.GetKeyUp(KeyCode.Escape) && pendingObject != null)
@@ -196,7 +198,7 @@ public class BuildingManager : MonoBehaviour
         if (selectedObjectFromDropdown != new GameObject())
         {
             pendingObject = Instantiate(selectedObjectFromDropdown, position, transform.rotation);
-            pendingObject.transform.rotation = Quaternion.Euler(90, 0, 0);
+            pendingObject.transform.rotation = Quaternion.Euler(0, 0, 0);
             pendingObject.tag = "Object";
 
             // Offset by half its height along its local Y direction
@@ -207,9 +209,8 @@ public class BuildingManager : MonoBehaviour
                 for (int i = 1; i < renderers.Length; i++)
                     combinedBounds.Encapsulate(renderers[i].bounds);
 
-                float halfHeight = combinedBounds.size.y / 2f;
-                // Offset along the object's local Y (up) direction
-                pendingObject.transform.position += Vector3.up * halfHeight;
+                float lowestY = combinedBounds.min.y;
+                pendingObjectOffset = 0f - lowestY;
             }
 
             // Get the EnemyController component from the instantiated object

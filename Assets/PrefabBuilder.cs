@@ -124,9 +124,9 @@ public class PrefabBuilder
                 if (instance.GetComponent<CheckPlacement>() == null)
                     instance.AddComponent<CheckPlacement>();
 
-                var enemyCtrl = instance.GetComponent<EnemyController>();
+                var enemyCtrl = instance.GetComponent<AllyController>();
                 if (enemyCtrl == null)
-                    enemyCtrl = instance.AddComponent<EnemyController>();
+                    enemyCtrl = instance.AddComponent<AllyController>();
 
                 // Save as prefab in the corresponding output subfolder
                 string filename = Path.GetFileNameWithoutExtension(assetPath);

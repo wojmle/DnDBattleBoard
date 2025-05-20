@@ -6,9 +6,9 @@
             <engine:Button text="X" name="close-button" style="background-color: rgb(249, 229, 185);" />
         </engine:VisualElement>
         <engine:VisualElement name="ally-form" style="flex-grow: 1; justify-content: space-evenly;">
-            <engine:TextField label="Name" placeholder-text="Enter ally name" name="ally-name" password="false" />
-            <engine:DropdownField label="Race" name="race-dropdown" />
-            <engine:DropdownField label="Model" name="model-dropdown" />
+            <engine:TextField label="Name" placeholder-text="Enter ally name" name="ally-name" password="false" tabindex="-1" />
+            <engine:DropdownField label="Race" name="race-dropdown" tabindex="-1" />
+            <engine:DropdownField label="Model" name="model-dropdown" tabindex="-1" />
         </engine:VisualElement>
         <engine:Button text="Create" name="action-button" style="background-color: rgb(249, 229, 185);" />
         <engine:VisualElement name="resize-handle-top" class="resize-handle resize-handle-top" style="flex-grow: 1;" />

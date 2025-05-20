@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8909245830760731010}
   - component: {fileID: 4471524195354707463}
   - component: {fileID: 6923789117012976517}
-  - component: {fileID: 7879873238857470948}
+  - component: {fileID: 3308068641672945280}
   m_Layer: 0
   m_Name: Rzyt Mygal
   m_TagString: Untagged
@@ -30,8 +30,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9095253019932595508}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab83d9b4702962441b0fc357e8ba8072, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7879873238857470948
+--- !u!114 &3308068641672945280
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -160,7 +160,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 9095253019932595508}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8657629ab092bf94fbd10964f21fb5ce, type: 3}
+  m_Script: {fileID: 11500000, guid: 714760a2c649c5b418d0557d9f4d0e3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEnemy: 0
