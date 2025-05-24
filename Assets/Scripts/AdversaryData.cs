@@ -44,7 +44,13 @@ namespace Assets.Scripts
         public Story Story { get; set; }
     }
 
-    public class FellAbility
+    public interface IAbility
+    {
+        string AbilityName { get; set; }
+        string AbilityDescription { get; set; }
+    }
+
+    public class FellAbility : IAbility
     {
         [JsonProperty("ability_name")]
         public string AbilityName { get; set; }
@@ -52,14 +58,14 @@ namespace Assets.Scripts
         public string AbilityDescription { get; set; }
     }
 
-    public class CommonFellAbility
+    public class CommonFellAbility : FellAbility
     {
         [JsonProperty("common_fell_ability_id")]
-        public string CommonFellAbilityId { get; set; }
+        public string AbilityID { get; set; }
         [JsonProperty("common_fell_ability_name")]
-        public string CommonFellAbilityName { get; set; }
+        public string AbilityName { get; set; }
         [JsonProperty("common_fell_ability_description")]
-        public string CommonFellAbilityDescription { get; set; }
+        public string AbilityDescription { get; set; }
     }
 
     public class CombatProficiency

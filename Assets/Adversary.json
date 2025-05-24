@@ -361,884 +361,6 @@
   ],
   "adversaries": [
     {
-      "adversary_id": 1000,
-      "name": "Goblin - łucznik",
-      "description": "Ten goblin ma szczególnie bystry wzrok i doskonale widzi w ciemności, a pewna ręka pozwala mu szyć z łuku z równą celnością za dnia, jak i nocą.",
-      "attribute_level": 2,
-      "endurance": 8,
-      "might": 1,
-      "hate": 2,
-      "parry": "-",
-      "armour": 1,
-      "category_id": 0,
-      "race_id": 1,
-      "fell_abilities": [
-        {
-          "ability_name": "Bojaźliwość",
-          "ability_description": "Bojaźliwość. Gdy znajdziesz się pod wpływem zadania bojowego Przeraź Wroga, tracisz 1 punkt Nienawiści."
-        },
-        {
-          "ability_name": "Orkowa Trucizna",
-          "ability_description": "Jeżeli twój atak zada Ranę, cel zostaje zatruty (efekty działania trucizny opisano na stronie 134)."
-        }
-      ],
-      "combat_proficiencies": [
-        {
-          "proficiency_name": "Rogowy łuk",
-          "proficiency_level": 3,
-          "proficiency_details": "3/14, Celny Atak"
-        },
-        {
-          "proficiency_name": "Wyszczerbiony nóż",
-          "proficiency_level": 2,
-          "proficiency_details": "2/14"
-        }
-      ],
-      "tags": [
-        "Chytry",
-        "Bystrooki"
-      ]
-    },
-    {
-      "adversary_id": 1001,
-      "name": "Ork - herszt",
-      "description": "Tylko najbardziej niegodziwi i okrutni orkowie żyją na tyle długo, by dochrapać się pozycji herszta i dowodzić swoim plemieniem albo bandą w bitwach. Hersztów łatwo rozpoznać: są zwykle najwięksi, mają najstraszliw-szy oręż i najokazalszą zbroję. Często noszą też pamiątki długiej służby u Władcy Ciemności – blizny i okaleczenia.",
-      "attribute_level": 5,
-      "endurance": 20,
-      "might": 1,
-      "hate": 5,
-      "parry": "+3",
-      "armour": 3,
-      "category_id": 0,
-      "race_id": 1,
-      "fell_abilities": [
-        {
-          "ability_name": "Wężowa Szybkość",
-          "ability_description": "Gdy jesteś atakowany, wydaj 1 punkt Nienawiści, by Osłabić test trafienia."
-        },
-        {
-          "ability_name": "Triumfalny Wrzask",
-          "ability_description": "Wydaj 1 punkt Nienawiści, by przywrócić po 1 punkcie Nienawiści pozostałym orkom w potyczce."
-        }
-      ],
-      "combat_proficiencies": [
-        {
-          "proficiency_name": "Szabla",
-          "proficiency_level": 3,
-          "proficiency_details": "3/16"
-        },
-        {
-          "proficiency_name": "Włócznia",
-          "proficiency_level": 3,
-          "proficiency_details": "3/14, Celny Atak"
-        }
-      ],
-      "tags": [
-        "Okrutny",
-        "Zahartowany"
-      ]
-    },
-    {
-      "adversary_id": 1002,
-      "name": "Ork - wartownik",
-      "description": "Najsilniejszych i najodważniejszych orków zakuwa się w najtwardszy pancerz, jaki tylko uda się wyklepać, i stawia na warcie, by strzegli jakiegoś miejsca z pomocą krzywego miecza i ciężkiej tarczy.",
-      "attribute_level": 4,
-      "endurance": 16,
-      "might": 1,
-      "hate": 4,
-      "parry": "+2",
-      "armour": 3,
-      "category_id": 0,
-      "race_id": 1,
-      "fell_abilities": [],
-      "combat_proficiencies": [
-        {
-          "proficiency_name": "Szabla",
-          "proficiency_level": 3,
-          "proficiency_details": "3/16"
-        },
-        {
-          "proficiency_name": "Włócznia",
-          "proficiency_level": 3,
-          "proficiency_details": "3/14, Celny Atak"
-        }
-      ],
-      "tags": [
-        "Silny",
-        "Czujny"
-      ]
-    },
-    {
-      "adversary_id": 1003,
-      "name": "Ork - żołdak",
-      "description": "Orkowi żołnierze, zwykle zbrojni w niemożliwe do pomylenia krzywe szable, są wrzaskliwi i nieposłuszni. By utrzymać wśród nich dyscyplinę, niezbędny jest silny herszt, okrutny bat i ostry nóż.",
-      "attribute_level": 3,
-      "endurance": 12,
-      "might": 1,
-      "hate": 3,
-      "parry": "+1",
-      "armour": 2,
-      "category_id": 0,
-      "race_id": 1,
-      "fell_abilities": [
-        {
-          "ability_name": "Bojaźliwość",
-          "ability_description": "Bojaźliwość. Gdy znajdziesz się pod wpływem zadania bojowego Przeraź Wroga, tracisz 1 punkt Nienawiści."
-        }
-      ],
-      "combat_proficiencies": [
-        {
-          "proficiency_name": "Szabla",
-          "proficiency_level": 3,
-          "proficiency_details": "3/16"
-        },
-        {
-          "proficiency_name": "Włócznia",
-          "proficiency_level": 3,
-          "proficiency_details": "3/14, Celny Atak"
-        }
-      ],
-      "tags": [
-        "Nieposłuszny",
-        "Mściwy"
-      ]
-    },
-    {
-      "adversary_id": 1004,
-      "name": "Wielki ork - wódz",
-      "description": "Wielcy orkowie często władają swoimi pobratymcami o słabszej krwi.",
-      "attribute_level": 7,
-      "endurance": 48,
-      "might": 2,
-      "hate": 7,
-      "parry": "+3",
-      "armour": 4,
-      "category_id": 0,
-      "race_id": 1,
-      "fell_abilities": [
-        {
-          "ability_name": "Straszliwa Siła",
-          "ability_description": "Jeżeli Przełamałeś Obronę wroga atakiem wręcz, wydaj 1 punkt Nienawiści, by Osłabić test PANCERZA trafionego nieprzyjaciela."
-        },
-        {
-          "ability_name": "Wężowa Szybkość",
-          "ability_description": "Gdy jesteś atakowany, wydaj 1 punkt Nienawiści, by Osłabić test trafienia."
-        },
-        {
-          "ability_name": "Triumfalny Wrzask",
-          "ability_description": "Wydaj 1 punkt Nienawiści, by przywrócić po 1 punkcie Nienawiści pozostałym orkom w potyczce."
-        }
-      ],
-      "combat_proficiencies": [
-        {
-          "proficiency_name": "Ciężka szabla",
-          "proficiency_level": 3,
-          "proficiency_details": "5/18, Strzaskanie Tarczy"
-        },
-        {
-          "proficiency_name": "Włócznia o szerokim grocie",
-          "proficiency_level": 3,
-          "proficiency_details": "5/16, Celny Atak"
-        }
-      ],
-      "tags": [
-        "Śmiały",
-        "Chytry"
-      ]
-    },
-    {
-      "adversary_id": 1005,
-      "name": "Wielki ork - obrońca",
-      "description": "Potwory o rozumie słabszym niż sprytni wodzowie, za cenę życia bronią swoich przywódców.",
-      "attribute_level": 6,
-      "endurance": 24,
-      "might": 2,
-      "hate": 6,
-      "parry": "+2",
-      "armour": 3,
-      "category_id": 0,
-      "race_id": 1,
-      "fell_abilities": [
-        {
-          "ability_name": "Ohydna żywotność",
-          "ability_description": "Nie można wyrządzić ci krzywdy gołymi rękami. Nadto, gdy atak zada ci dość obrażeń, by zmniejszyć twoją Wytrzymałość do zera, zamiast tego powoduje Przełamanie Obrony. Jeśli przeżyjesz, twoja Wytrzymałość wzrasta do połowy maksymalnej wartości."
-        }
-      ],
-      "combat_proficiencies": [
-        {
-          "proficiency_name": "Orkowy topór",
-          "proficiency_level": 3,
-          "proficiency_details": "5/18, Straskanie Tarczy"
-        },
-        {
-          "proficiency_name": "Włócznia o szerokim grocie",
-          "proficiency_level": 3,
-          "proficiency_details": "5/16, Celny Atak"
-        }
-      ],
-      "tags": [
-        "Okrutny",
-        "Zahartowany"
-      ]
-    },
-    {
-      "adversary_id": 1006,
-      "name": "Wielki troll jaskiniowy",
-      "description": "Ta ogromna bestia, której lękają się nawet poganiacze, służy orkom do rozbijania obrony oraz miażdzenia ducha najgroźniejszych nawet wrogów.",
-      "attribute_level": 10,
-      "endurance": 80,
-      "might": 2,
-      "hate": 10,
-      "parry": "-1",
-      "armour": 3,
-      "category_id": 0,
-      "race_id": 2,
-      "fell_abilities": [
-        {
-          "ability_name": "Wzbudzenie Strachu",
-          "ability_description": "Wydaj 1 punkt Nienawiści, by wszyscy Bohaterowie w zasięgu wzroku otrzymali 2 punkty Cienia (Groza). Postaci, którym nie uda się Próba Cienia, są przerażone i przez resztę potyczki nie mogą wydawać Nadziei."
-        },
-        {
-          "ability_name": "Gruba Skóra",
-          "ability_description": "Wydaj 1 punkt Nienawiści, by dodać (2k) do testu PANCERZA."
-        }
-      ],
-      "combat_proficiencies": [
-        {
-          "proficiency_name": "Miażdżenie",
-          "proficiency_level": 3,
-          "proficiency_details": "6/12, Pochwycenie"
-        },
-        {
-          "proficiency_name": "Ugryzienie",
-          "proficiency_level": 2,
-          "proficiency_details": "6/14, Celny Atak"
-        }
-      ],
-      "tags": [
-        "Brutalny",
-        "Nikczemny"
-      ]
-    },
-    {
-      "adversary_id": 1006,
-      "name": "Troll jaskiniowy - niuchacz",
-      "description": "Ta odmiana trolla jaskiniowego jest nieco mniejsza od innych, choć wciąż przewyższa rozmiarami orków. Niuchacze doskonale radzą sobie głęboko pod ziemią, polując samotnie i w zupełnej ciemności – jak nikt potrafią bowiem zwęszyć ofiarę.",
-      "attribute_level": 6,
-      "endurance": 50,
-      "might": 2,
-      "hate": 6,
-      "parry": "-1",
-      "armour": 3,
-      "category_id": 0,
-      "race_id": 2,
-      "fell_abilities": [
-        {
-          "ability_name": "Upodobanie Do Ciemności",
-          "ability_description": "W ciemnościach wszystkie twoje rzuty za atak są Wzmocnione."
-        },
-        {
-          "ability_name": "Strach Przed Ogniem",
-          "ability_description": "Tracisz 1 punkt Nienawiści na początku każdej rundy, gdy jesteś związany walką wręcz z przeciwnikiem niosącym pochodnię albo inny płonący przedmiot."
-        },
-        {
-          "ability_name": "Gruba Skóra",
-          "ability_description": "Wydaj 1 punkt Nienawiści, by dodać (2k) do testu PANCERZA."
-        }
-      ],
-      "combat_proficiencies": [
-        {
-          "proficiency_name": "Maczuga",
-          "proficiency_level": 3,
-          "proficiency_details": "6/16, Strzaskanie Tarczy"
-        },
-        {
-          "proficiency_name": "Ugryzienie",
-          "proficiency_level": 2,
-          "proficiency_details": "6/14, Celny Atak"
-        }
-      ],
-      "tags": [
-        "Nieuchwytny",
-        "Przezorny"
-      ]
-    },
-    {
-      "adversary_id": 1007,
-      "name": "Troll kamienny - łupieżca",
-      "description": "Choć taki troll wygląda równie straszliwie, jak inni przedstawiciele tego rodzaju, wydaje się mniej potworny – a to dla tej przyczyny, że ma w zwyczaju nosić zgrzebne ubrania, gotować posiłki i używać prostych narzędzi, na przykład kubków i beczek.",
-      "attribute_level": 8,
-      "endurance": 60,
-      "might": 2,
-      "hate": 8,
-      "parry": "-",
-      "armour": 3,
-      "category_id": 0,
-      "race_id": 2,
-      "fell_abilities": [
-        {
-          "ability_name": "Nienawiść",
-          "ability_description": "Gdy walczysz z krasnoludami, twoje testy ataku zostają Wzmocnione."
-        },
-        {
-          "ability_name": "Straszliwa Siła",
-          "ability_description": "Jeżeli Przełamałeś Obronę wroga atakiem wręcz, wydaj 1 punkt Nienawiści, by Osłabić test PANCERZA trafionego nieprzyjaciela."
-        }
-      ],
-      "combat_proficiencies": [
-        {
-          "proficiency_name": "Maczuga",
-          "proficiency_level": 3,
-          "proficiency_details": "6/16, Strzaskanie Tarczy"
-        },
-        {
-          "proficiency_name": "Miażdżenie",
-          "proficiency_level": 2,
-          "proficiency_details": "6/12, Pochwycenie"
-        }
-      ],
-      "tags": [
-        "Głodny",
-        "Drażliwy"
-      ]
-    },
-    {
-      "adversary_id": 1008,
-      "name": "Troll kamienny - wódz",
-      "description": "Zdarza się, że na czele grupy kamiennych trollów staje najsilniejszy jej członek. Pod jego wodzą banda napada na kupców i samotne domostwa.",
-      "attribute_level": 9,
-      "endurance": 700,
-      "might": 2,
-      "hate": 9,
-      "parry": "-",
-      "armour": 3,
-      "category_id": 0,
-      "race_id": 2,
-      "fell_abilities": [
-        {
-          "ability_name": "Nienawiść",
-          "ability_description": "Gdy walczysz z krasnoludami, twoje testy ataku zostają Wzmocnione."
-        },
-        {
-          "ability_name": "Straszliwa Siła",
-          "ability_description": "Jeżeli Przełamałeś Obronę wroga atakiem wręcz, wydaj 1 punkt Nienawiści, by Osłabić test PANCERZA trafionego nieprzyjaciela."
-        },
-        {
-          "ability_name": "Triumfalny Wrzask",
-          "ability_description": "Wydaj 1 punkt Nienawiści, by przywrócić po 1 punkcie Nienawiści pozostałym orkom w potyczce."
-        }
-      ],
-      "combat_proficiencies": [
-        {
-          "proficiency_name": "Maczuga",
-          "proficiency_level": 3,
-          "proficiency_details": "6/16, Strzaskanie Tarczy"
-        },
-        {
-          "proficiency_name": "Miażdżenie",
-          "proficiency_level": 2,
-          "proficiency_details": "6/12, Pochwycenie"
-        }
-      ],
-      "tags": [
-        "Okrutny",
-        "Podejrzliwy"
-      ]
-    },
-    {
-      "adversary_id": 1009,
-      "name": "Upiór kurhanu",
-      "description": "Upiory kurhanów przybyły na wzgórza Tyrn Gorthad z rozkazu Czarnoksiężnika z Angmaru, by wesprzeć go w wojnach przeciw królestwu Arnoru. Objawiają się jako wysokie i mroczne postaci o zimnych oczach pałających bladym światłem. Na kościanych palcach noszą pierścienie, a wokół zwiędłych szyi owijają złote łańcuchy. W dłoniach dzierżą pradawne, wyszczerbione miecze.",
-      "attribute_level": 6,
-      "endurance": 24,
-      "might": 1,
-      "hate": 6,
-      "parry": "-",
-      "armour": 2,
-      "category_id": 0,
-      "race_id": 11,
-      "fell_abilities": [
-        {
-          "ability_name": "Upodobanie Do Ciemności",
-          "ability_description": "W ciemnościach wszystkie twoje rzuty na atak są Wzmocnione."
-        },
-        {
-          "ability_name": "Złowrogie Czary",
-          "ability_description": "Wydaj 1 punkt Nienawiści, by jeden z Bohaterów otrzymał 3 punkty Cienia (Czarnoksięstwo). Jeżeli celowi nie uda się Próba Cienia albo pogodził się z Przypiętnieniem, reakcją przeciwników może go gubić wykrzykiwana testująca PIEŚŃ. Sam onśnie się ogólnie."
-        },
-        {
-          "ability_name": "Wstręt Do Słońca",
-          "ability_description": "Tracisz 1 punkt Nienawiści w każdej turze, w której oświetlają cię bezpośrednio promienie słońca."
-        }
-      ],
-      "combat_proficiencies": [
-        {
-          "proficiency_name": "Pradawny miecz",
-          "proficiency_level": 3,
-          "proficiency_details": "5/16, Celny atak"
-        },
-        {
-          "proficiency_name": "Lodowaty dotyk",
-          "proficiency_level": 2,
-          "proficiency_details": "6/12, Pochwycenie"
-        }
-      ],
-      "tags": [
-        "Chytry",
-        "Mściwy"
-      ]
-    },
-    {
-      "adversary_id": 1010,
-      "name": "Złowroga zjawa",
-      "description": "Złowroga zjawa przyjmuje postać wędrowca, przemierzającego dawne ruiny, zgarbionego i okutango w płaszcz z kapturem, pod którym kryje oblicze upiora. Ciało ma niemal przezroczyste, a jej oczy lśnią jak rozżarzone węgle. Napatkana o zmroku może ująć za człowieka, potrafi bowiem mówić, choć głos ma syczący, a wymowę – dziwaczną. Złowrogie zjawy nie rozstają się ze starożytną bronią i potłuczonymi tarczami, pamiątkami dawnych wojen. Władają nimi z przerażającą wprawą.",
-      "attribute_level": 4,
-      "endurance": 16,
-      "might": 1,
-      "hate": 4,
-      "parry": "-1",
-      "armour": 2,
-      "category_id": 0,
-      "race_id": 11,
-      "fell_abilities": [
-        {
-          "ability_name": "Upodobanie Do Ciemności",
-          "ability_description": "W ciemnościach wszystkie twoje rzuty na atak są Wzmocnione."
-        },
-        {
-          "ability_name": "Strach Przed Ogniem",
-          "ability_description": "Tracisz 1 punkt Nienawiści na początku każdej rundy, gdy jesteś związany walką wręcz z przeciwnikiem niosącym pochodnię albo inny płonący przedmiot."
-        }
-      ],
-      "combat_proficiencies": [
-        {
-          "proficiency_name": "Wyszczerbiony miecz",
-          "proficiency_level": 3,
-          "proficiency_details": "4/16"
-        },
-        {
-          "proficiency_name": "Okrutna włócznia",
-          "proficiency_level": 2,
-          "proficiency_details": "4/14, Celny Atak"
-        }
-      ],
-      "tags": [
-        "Chyża",
-        "Przezorna"
-      ]
-    },
-    {
-      "adversary_id": 1011,
-      "name": "Istota z bagien",
-      "description": "Istoty z bagien to niezdborne, czekokopodobne stwory o chorobliwej, bladej skórze – jak u zwłok, które zbyt długo leżały w wodzie. Ale paskudny blask ich malutkich oczu zdradza ogromną wniośliwość i głęboką niegodziwość. Żyją pośród ruin, w dawnych siedzibach ludzi, najczęściej w pobliżu rozlewisk ciemnej, zatęchłej wody. Kryją się pod ziemią w niewielkich grupach, zawsze gotowe porwać nieświadomych wędrowców i zaciągnąć do głębokich piwnic, gdzie z upodobaniem gromadzą złoto.",
-      "attribute_level": 3,
-      "endurance": 12,
-      "might": 1,
-      "hate": 3,
-      "parry": "-1",
-      "armour": 1,
-      "category_id": 0,
-      "race_id": 11,
-      "fell_abilities": [
-        {
-          "ability_name": "Strach Przed Ogniem",
-          "ability_description": "Tracisz 1 punkt Nienawiści na początku każdej rundy, gdy jesteś związany walką wręcz z przeciwnikiem niosącym pochodnię albo inny płonący przedmiot."
-        },
-        {
-          "ability_name": "Wstręt Do Słońca",
-          "ability_description": "Tracisz 1 punkt Nienawiści w każdej turze, w której oświetlają cię bezpośrednio promienie słońca."
-        }
-      ],
-      "combat_proficiencies": [
-        {
-          "proficiency_name": "Kły",
-          "proficiency_level": 3,
-          "proficiency_details": "3/14, Celny Atak"
-        },
-        {
-          "proficiency_name": "Pazury",
-          "proficiency_level": 2,
-          "proficiency_details": "3/14, Pochwycenie"
-        }
-      ],
-      "tags": [
-        "Popędliwa",
-        "Nieuchwytna"
-      ]
-    },
-    {
-      "adversary_id": 1012,
-      "name": "Dziki wilk",
-      "description": "To przeciętnych rozmiarów warg, tylko nieco większy od zwyczajnego wilka – ale po stokroć bardziej zajadły. Zwykle trzyma się watahy, ale czasem napotkać można samotnego myśliwego albo zwiadowcę, gotowego ostrzec innych wargów i różne inne istoty przenikliwym wyciem, które niesie się na wiele mil. Orkowie dosiadają czasem dzikich wilków tak, jak ludzie koni.",
-      "attribute_level": 3,
-      "endurance": 12,
-      "might": 1,
-      "hate": 3,
-      "parry": "-",
-      "armour": 1,
-      "category_id": 0,
-      "race_id": 12,
-      "fell_abilities": [
-        {
-          "ability_name": "Strach Przed Ogniem",
-          "ability_description": "Tracisz 1 punkt Nienawiści na początku każdej rundy, gdy jesteś związany walką wręcz z przeciwnikiem niosącym pochodnię albo inny płonący przedmiot."
-        },
-        {
-          "ability_name": "Wężowa Szybkość",
-          "ability_description": "Gdy jesteś atakowany, wydaj 1 punkt Nienawiści, by Osłabić test trafienia."
-        }
-      ],
-      "combat_proficiencies": [
-        {
-          "proficiency_name": "Kły",
-          "proficiency_level": 3,
-          "proficiency_details": "3/14, Celny Atak"
-        }
-      ],
-      "tags": [
-        "Bystrooki",
-        "Ponury"
-      ]
-    },
-    {
-      "adversary_id": 1013,
-      "name": "Przewodnik watahy",
-      "description": "Przewodnik watahy góruje nad pozostałymi wargami rozmiarem, okrucieństwem i sprytem – dlatego stado gromadzi się przy nim w chwilach zagrożenia, na przykład, kiedy jego terytorium naruszy banda wędrownych poszukiwaczy przygód. Przewodnik nigdy nie wędruje sam i spotkać go można tylko w otoczeniu zgrai dzikich wilków.",
-      "attribute_level": 4,
-      "endurance": 16,
-      "might": 1,
-      "hate": 4,
-      "parry": "-",
-      "armour": 1,
-      "category_id": 0,
-      "race_id": 5,
-      "fell_abilities": [
-        {
-          "ability_name": "Strach Przed Ogniem",
-          "ability_description": "Tracisz 1 punkt Nienawiści na początku każdej rundy, gdy jesteś związany walką wręcz z przeciwnikiem niosącym pochodnię albo inny płonący przedmiot."
-        },
-        {
-          "ability_name": "Wężowa Szybkość",
-          "ability_description": "Gdy jesteś atakowany, wydaj 1 punkt Nienawiści, by Osłabić test trafienia."
-        },
-        {
-          "ability_name": "Triumfalne Wycie",
-          "ability_description": "Wydaj 1 punkt Nienawiści, by przywrócić po 1 punkcie Nienawiści pozostałym wargom w potyczce."
-        }
-      ],
-      "combat_proficiencies": [
-        {
-          "proficiency_name": "Kły",
-          "proficiency_level": 3,
-          "proficiency_details": "3/14, Celny Atak"
-        }
-      ],
-      "tags": [
-        "Chyży",
-        "Zaciekły"
-      ]
-    },
-    {
-      "adversary_id": 1014,
-      "name": "Pies Saurona",
-      "description": "Pies Saurona to zaufany sługa Władcy Ciemności, wybrany przez wzgląd na brutalność i szczególnie pokrętny umysł. Zawsze realizuje konkretne zadanie: gromadzi siły na zbliżającą się wojnę, poluje na określoną osobę albo bada jakiś teren. Choć wygląda jak zwyczajny warg, w jego ciele drzemie daleko straszliwsza siła.",
-      "attribute_level": 5,
-      "endurance": 20,
-      "might": 2,
-      "hate": 5,
-      "parry": "+1",
-      "armour": 2,
-      "category_id": 0,
-      "race_id": 2,
-      "fell_abilities": [
-        {
-          "ability_name": "Śmiercionośne Uderzenie",
-          "ability_description": "Ranione przez ciebie cele wykonują Osłabiony rzut kością Działania, sprawdzając stopień Rany."
-        },
-        {
-          "ability_name": "Ohydna Żywotność",
-          "ability_description": "Nie można wyrazić ci krzywdy gołymi rękami. Nadto, gdy atak zada ci osobę zbronią, by zmniejszyć twoją Wytrzymałość o 2, zamiast tego wykonuje Przełamanie Obrony. Jeśli przetrwasz, twoja Wytrzymałość wzrasta do połowy maksymalnej wartości."
-        },
-        {
-          "ability_name": "Wzbudzenie Strachu",
-          "ability_description": "Wydaj 1 punkt Nienawiści, by wszyscy Bohaterowie w zasięgu wzroku otrzymali 2 punkty Cienia (Groza). Postaci, którym nie uda się Próba Cienia są przerażone i przez resztę potyczki nie mogą używać Nadziei."
-        }
-      ],
-      "combat_proficiencies": [
-        {
-          "proficiency_name": "Kły",
-          "proficiency_level": 3,
-          "proficiency_details": "5/14, Celny Atak"
-        },
-        {
-          "proficiency_name": "Pazury",
-          "proficiency_level": 3,
-          "proficiency_details": "5/14, Pochwycenie"
-        }
-      ],
-      "tags": [
-        "Chytry",
-        "Popędliwy"
-      ]
-    },
-    {
-      "adversary_id": 1015,
-      "name": "Zbir",
-      "description": "Tchórzliwy bandyta, który bez wahania obrabuje bezbronną ofiarę, ale na samotnego poszukiwacza przygód zasadza się wyłącznie z kamratami.",
-      "attribute_level": 2,
-      "endurance": 8,
-      "might": 1,
-      "hate": 2,
-      "parry": "-",
-      "armour": 1,
-      "category_id": 0,
-      "race_id": 5,
-      "fell_abilities": [
-        {
-          "ability_name": "Bojazliwość",
-          "ability_description": "Gdy znajdziesz się pod wpływem Zadania Bojowego Przerazić Wroga, tracisz 1 punkt Determinacji."
-        }
-      ],
-      "combat_proficiencies": [
-        {
-          "proficiency_name": "Pałka",
-          "proficiency_level": 2,
-          "proficiency_details": "3/12"
-        },
-        {
-          "proficiency_name": "Łuk",
-          "proficiency_level": 2,
-          "proficiency_details": "3/14, Celny Atak"
-        }
-      ],
-      "tags": [
-        "Zwinny",
-        "Przezorny"
-      ]
-    },
-    {
-      "adversary_id": 1016,
-      "name": "Herszt bandytów",
-      "description": "Naczelny bandyta jest silniejszy i bardziej zaciekły niż kamraci. Na swoją pozycję zapracował albo bystrością, albo pięścią.",
-      "attribute_level": 3,
-      "endurance": 12,
-      "might": 1,
-      "hate": 3,
-      "parry": "+1",
-      "armour": 2,
-      "category_id": 0,
-      "race_id": 5,
-      "fell_abilities": [
-        {
-          "ability_name": "Triumfalny Wrzask",
-          "ability_description": "Wydaj 1 punkt Determinacji, by przywrócić po 1 punkcie Determinacji pozostałym bandytom w potyczce."
-        }
-      ],
-      "combat_proficiencies": [
-        {
-          "proficiency_name": "Krótki miecz",
-          "proficiency_level": 3,
-          "proficiency_details": "3/16"
-        },
-        {
-          "proficiency_name": "Łuk",
-          "proficiency_level": 2,
-          "proficiency_details": "3/14, Celny Atak"
-        }
-      ],
-      "tags": [
-        "Bezwzględny",
-        "Skryty"
-      ]
-    },
-    {
-      "adversary_id": 1017,
-      "name": "Rozbójnik",
-      "description": "Rozbójnik jest daleko groźniejszy niż zwykły bandyta: nawykł do życia w dzikich ostępach i wie, jak radzić sobie z uzbrojonymi ofiarami.",
-      "attribute_level": 4,
-      "endurance": 16,
-      "might": 1,
-      "hate": 4,
-      "parry": "-",
-      "armour": 2,
-      "category_id": 0,
-      "race_id": 5,
-      "fell_abilities": [
-        {
-          "ability_name": "Wężowa Szybkość",
-          "ability_description": "Gdy jesteś atakowany, wydaj 1 punkt Determinacji, by Osłabić test trafienia."
-        }
-      ],
-      "combat_proficiencies": [
-        {
-          "proficiency_name": "Włócznia",
-          "proficiency_level": 3,
-          "proficiency_details": "4/14, Celny Atak"
-        },
-        {
-          "proficiency_name": "Łuk",
-          "proficiency_level": 2,
-          "proficiency_details": "3/14, Celny Atak"
-        }
-      ],
-      "tags": [
-        "Chyży",
-        "Mściwy"
-      ]
-    },
-    {
-      "adversary_id": 1018,
-      "name": "Najeźdźca z Południa",
-      "description": "Gdy mija szczególnie ciężka zima, ludziom z Południa zdarza się zbierać w zbrojne bandy, które z zaskoczenia napadają na samotne domostwa, grabia je i co rychlej rozpływają się we mgle, z której się wyłoniły.",
-      "attribute_level": 4,
-      "endurance": 16,
-      "might": 1,
-      "hate": 4,
-      "parry": "+1",
-      "armour": 2,
-      "category_id": 0,
-      "race_id": 5,
-      "fell_abilities": [
-        {
-          "ability_name": "Wojowniczość",
-          "ability_description": "Wydaj 1 punkt Determinacji, by dodać (1k) i Wzmocnić rzut na atak."
-        }
-      ],
-      "combat_proficiencies": [
-        {
-          "proficiency_name": "Topór",
-          "proficiency_level": 3,
-          "proficiency_details": "5/18"
-        },
-        {
-          "proficiency_name": "Krótka włócznia",
-          "proficiency_level": 2,
-          "proficiency_details": "3/14, Celny Atak"
-        }
-      ],
-      "tags": [
-        "Sprytny",
-        "Zaharowany"
-      ]
-    },
-    {
-      "adversary_id": 1019,
-      "name": "Mocarz z Południa",
-      "description": "Mocarzem z Południa może być z równym powodzeniem wódz plemienia z Dunlandu, przywódca bandytów, który połączył poważniejsze bandy rabusiów w niewielką armię, albo po prostu szczególnie tęgi zbir.",
-      "attribute_level": 5,
-      "endurance": 20,
-      "might": 1,
-      "hate": 5,
-      "parry": "+2",
-      "armour": 3,
-      "category_id": 0,
-      "race_id": 5,
-      "fell_abilities": [
-        {
-          "ability_name": "Wojowniczość",
-          "ability_description": "Wydaj 1 punkt Determinacji, by dodać (1k) i Wzmocnić rzut na atak."
-        }
-      ],
-      "combat_proficiencies": [
-        {
-          "proficiency_name": "Włócznia",
-          "proficiency_level": 3,
-          "proficiency_details": "4/14, Celny Atak"
-        },
-        {
-          "proficiency_name": "Topór na długim stylisku",
-          "proficiency_level": 3,
-          "proficiency_details": "6/18, Strzaskanie Tarczy"
-        }
-      ],
-      "tags": [
-        "Okrutny",
-        "Mocarny"
-      ]
-    },
-    {
-      "adversary_id": 1020,
-      "name": "Búrzgul",
-      "description": "Wojowniczy Búrzgul jest nikczemnym orkiem, wodzem obszarpanej bandy, która zeszła aż z Bramy Goblinów w Górach Mglistych, by dołączyć do wilków z Ciemnych Jam. Usłyszał o tym miejscu od swego najbardziej zaufanego kamrata, ogromnego warga imieniem Szlaka, o futrze czarnym jak noc i płonących żółtych oczach. Jak na razie nikt, nawet Strażnicy Północy, nie ma pojęcia, że na Południowych Wzgórzach zaległo się nowe zagrożenie. Orkowie i wilki czekają na jakąś większą sposobność, póki co przeprowadzili tylko kilka świetnie obmyślonych ataków, z których nikt nie uszedł z życiem. Najgorsze jest jednak to, że Búrzgul regularnie się posłańców do większych skupisk orków w Angmarze i Górach Mglistych, więc nowiny z Bree bardzo szybko docierają do uszu agentów Cienia.",
-      "attribute_level": 5,
-      "endurance": 22,
-      "might": 1,
-      "hate": 5,
-      "parry": "+3",
-      "armour": 3,
-      "category_id": 0,
-      "race_id": 7,
-      "fell_abilities": [
-        {
-          "ability_name": "Orkowa Trucizna",
-          "ability_description": "Jeżeli twój atak zada Ranę, cel zostaje zatruty (efekty działania trucizny opisano na stronie 134)."
-        },
-        {
-          "ability_name": "Triumfalny Wrzask",
-          "ability_description": "Wydaj 1 punkt Nienawiści, by przywrócić po 1 punkcie Nienawiści pozostałym orkom w potyczce."
-        },
-        {
-          "ability_name": "Wężowa Szybkość",
-          "ability_description": "Gdy jesteś atakowany, wydaj 1 punkt Nienawiści, by Osłabić test trafienia."
-        }
-      ],
-      "combat_proficiencies": [
-        {
-          "proficiency_name": "Ciężka szabla",
-          "proficiency_level": 3,
-          "proficiency_details": "3/16, Strzaskanie Tarczy"
-        },
-        {
-          "proficiency_name": "Włócznia",
-          "proficiency_level": 2,
-          "proficiency_details": "3/14, Celny Atak"
-        }
-      ],
-      "tags": [
-        "Okrutny",
-        "Bystrooki"
-      ]
-    },
-    {
-      "adversary_id": 1021,
-      "name": "Szlaka",
-      "description": "Szlaka to ogromny warg o futrze czarnym jak noc i płonących żółtych oczach. Jest zaufanym kamratem Búrzgula, z którym razem planują ataki z ukrycia. Potrafi poruszać się w ciszy i niespodziewanie atakować z wielką zajadłością, łącząc zęby i pazury w śmiertelnych kombinacjach.",
-      "attribute_level": 4,
-      "endurance": 20,
-      "might": 1,
-      "hate": 4,
-      "parry": "+2",
-      "armour": 1,
-      "category_id": 0,
-      "race_id": 7,
-      "fell_abilities": [
-        {
-          "ability_name": "Strach Przed Ogniem",
-          "ability_description": "Tracisz 1 punkt Nienawiści na początku każdej rundy, gdy jesteś związany walką wręcz z przeciwnikiem niosącym pochodnię albo inny płonący przedmiot."
-        },
-        {
-          "ability_name": "Wściekły Atak",
-          "ability_description": "Wydaj 1 punkt Nienawiści po ataku Zębiskami, by natychmiast zaatakować ten sam cel Pazurami."
-        }
-      ],
-      "combat_proficiencies": [
-        {
-          "proficiency_name": "Zębiska",
-          "proficiency_level": 3,
-          "proficiency_details": "4/14, Celny Atak"
-        },
-        {
-          "proficiency_name": "Pazury",
-          "proficiency_level": 2,
-          "proficiency_details": "5/14"
-        }
-      ],
-      "tags": [
-        "Rozumny",
-        "Chyży"
-      ]
-    },
-    {
       "adversary_id": 1,
       "name": "Black Uruk",
       "description": "Large and evil Orcs of great strength, picked from among the fiercest to act as lieutenants, bodyguards or chosen warriors, sent to reinforce a colony of lesser Orcs.",
@@ -1670,7 +792,7 @@
       "parry": "+1",
       "armour": 2,
       "category_id": 1,
-      "race_id": 2,
+      "race_id": 1,
       "fell_abilities": [
         {
           "ability_name": "Snake-Like Speed",
@@ -7251,6 +6373,884 @@
       "tags": [
         "Huge",
         "Stealthy"
+      ]
+    },
+    {
+      "adversary_id": 1000,
+      "name": "Goblin - łucznik",
+      "description": "Ten goblin ma szczególnie bystry wzrok i doskonale widzi w ciemności, a pewna ręka pozwala mu szyć z łuku z równą celnością za dnia, jak i nocą.",
+      "attribute_level": 2,
+      "endurance": 8,
+      "might": 1,
+      "hate": 2,
+      "parry": "-",
+      "armour": 1,
+      "category_id": 0,
+      "race_id": 1,
+      "fell_abilities": [
+        {
+          "ability_name": "Bojaźliwość",
+          "ability_description": "Bojaźliwość. Gdy znajdziesz się pod wpływem zadania bojowego Przeraź Wroga, tracisz 1 punkt Nienawiści."
+        },
+        {
+          "ability_name": "Orkowa Trucizna",
+          "ability_description": "Jeżeli twój atak zada Ranę, cel zostaje zatruty (efekty działania trucizny opisano na stronie 134)."
+        }
+      ],
+      "combat_proficiencies": [
+        {
+          "proficiency_name": "Rogowy łuk",
+          "proficiency_level": 3,
+          "proficiency_details": "3/14, Celny Atak"
+        },
+        {
+          "proficiency_name": "Wyszczerbiony nóż",
+          "proficiency_level": 2,
+          "proficiency_details": "2/14"
+        }
+      ],
+      "tags": [
+        "Chytry",
+        "Bystrooki"
+      ]
+    },
+    {
+      "adversary_id": 1001,
+      "name": "Ork - herszt",
+      "description": "Tylko najbardziej niegodziwi i okrutni orkowie żyją na tyle długo, by dochrapać się pozycji herszta i dowodzić swoim plemieniem albo bandą w bitwach. Hersztów łatwo rozpoznać: są zwykle najwięksi, mają najstraszliw-szy oręż i najokazalszą zbroję. Często noszą też pamiątki długiej służby u Władcy Ciemności – blizny i okaleczenia.",
+      "attribute_level": 5,
+      "endurance": 20,
+      "might": 1,
+      "hate": 5,
+      "parry": "+3",
+      "armour": 3,
+      "category_id": 0,
+      "race_id": 1,
+      "fell_abilities": [
+        {
+          "ability_name": "Wężowa Szybkość",
+          "ability_description": "Gdy jesteś atakowany, wydaj 1 punkt Nienawiści, by Osłabić test trafienia."
+        },
+        {
+          "ability_name": "Triumfalny Wrzask",
+          "ability_description": "Wydaj 1 punkt Nienawiści, by przywrócić po 1 punkcie Nienawiści pozostałym orkom w potyczce."
+        }
+      ],
+      "combat_proficiencies": [
+        {
+          "proficiency_name": "Szabla",
+          "proficiency_level": 3,
+          "proficiency_details": "3/16"
+        },
+        {
+          "proficiency_name": "Włócznia",
+          "proficiency_level": 3,
+          "proficiency_details": "3/14, Celny Atak"
+        }
+      ],
+      "tags": [
+        "Okrutny",
+        "Zahartowany"
+      ]
+    },
+    {
+      "adversary_id": 1002,
+      "name": "Ork - wartownik",
+      "description": "Najsilniejszych i najodważniejszych orków zakuwa się w najtwardszy pancerz, jaki tylko uda się wyklepać, i stawia na warcie, by strzegli jakiegoś miejsca z pomocą krzywego miecza i ciężkiej tarczy.",
+      "attribute_level": 4,
+      "endurance": 16,
+      "might": 1,
+      "hate": 4,
+      "parry": "+2",
+      "armour": 3,
+      "category_id": 0,
+      "race_id": 1,
+      "fell_abilities": [],
+      "combat_proficiencies": [
+        {
+          "proficiency_name": "Szabla",
+          "proficiency_level": 3,
+          "proficiency_details": "3/16"
+        },
+        {
+          "proficiency_name": "Włócznia",
+          "proficiency_level": 3,
+          "proficiency_details": "3/14, Celny Atak"
+        }
+      ],
+      "tags": [
+        "Silny",
+        "Czujny"
+      ]
+    },
+    {
+      "adversary_id": 1003,
+      "name": "Ork - żołdak",
+      "description": "Orkowi żołnierze, zwykle zbrojni w niemożliwe do pomylenia krzywe szable, są wrzaskliwi i nieposłuszni. By utrzymać wśród nich dyscyplinę, niezbędny jest silny herszt, okrutny bat i ostry nóż.",
+      "attribute_level": 3,
+      "endurance": 12,
+      "might": 1,
+      "hate": 3,
+      "parry": "+1",
+      "armour": 2,
+      "category_id": 0,
+      "race_id": 1,
+      "fell_abilities": [
+        {
+          "ability_name": "Bojaźliwość",
+          "ability_description": "Bojaźliwość. Gdy znajdziesz się pod wpływem zadania bojowego Przeraź Wroga, tracisz 1 punkt Nienawiści."
+        }
+      ],
+      "combat_proficiencies": [
+        {
+          "proficiency_name": "Szabla",
+          "proficiency_level": 3,
+          "proficiency_details": "3/16"
+        },
+        {
+          "proficiency_name": "Włócznia",
+          "proficiency_level": 3,
+          "proficiency_details": "3/14, Celny Atak"
+        }
+      ],
+      "tags": [
+        "Nieposłuszny",
+        "Mściwy"
+      ]
+    },
+    {
+      "adversary_id": 1004,
+      "name": "Wielki ork - wódz",
+      "description": "Wielcy orkowie często władają swoimi pobratymcami o słabszej krwi.",
+      "attribute_level": 7,
+      "endurance": 48,
+      "might": 2,
+      "hate": 7,
+      "parry": "+3",
+      "armour": 4,
+      "category_id": 0,
+      "race_id": 1,
+      "fell_abilities": [
+        {
+          "ability_name": "Straszliwa Siła",
+          "ability_description": "Jeżeli Przełamałeś Obronę wroga atakiem wręcz, wydaj 1 punkt Nienawiści, by Osłabić test PANCERZA trafionego nieprzyjaciela."
+        },
+        {
+          "ability_name": "Wężowa Szybkość",
+          "ability_description": "Gdy jesteś atakowany, wydaj 1 punkt Nienawiści, by Osłabić test trafienia."
+        },
+        {
+          "ability_name": "Triumfalny Wrzask",
+          "ability_description": "Wydaj 1 punkt Nienawiści, by przywrócić po 1 punkcie Nienawiści pozostałym orkom w potyczce."
+        }
+      ],
+      "combat_proficiencies": [
+        {
+          "proficiency_name": "Ciężka szabla",
+          "proficiency_level": 3,
+          "proficiency_details": "5/18, Strzaskanie Tarczy"
+        },
+        {
+          "proficiency_name": "Włócznia o szerokim grocie",
+          "proficiency_level": 3,
+          "proficiency_details": "5/16, Celny Atak"
+        }
+      ],
+      "tags": [
+        "Śmiały",
+        "Chytry"
+      ]
+    },
+    {
+      "adversary_id": 1005,
+      "name": "Wielki ork - obrońca",
+      "description": "Potwory o rozumie słabszym niż sprytni wodzowie, za cenę życia bronią swoich przywódców.",
+      "attribute_level": 6,
+      "endurance": 24,
+      "might": 2,
+      "hate": 6,
+      "parry": "+2",
+      "armour": 3,
+      "category_id": 0,
+      "race_id": 1,
+      "fell_abilities": [
+        {
+          "ability_name": "Ohydna żywotność",
+          "ability_description": "Nie można wyrządzić ci krzywdy gołymi rękami. Nadto, gdy atak zada ci dość obrażeń, by zmniejszyć twoją Wytrzymałość do zera, zamiast tego powoduje Przełamanie Obrony. Jeśli przeżyjesz, twoja Wytrzymałość wzrasta do połowy maksymalnej wartości."
+        }
+      ],
+      "combat_proficiencies": [
+        {
+          "proficiency_name": "Orkowy topór",
+          "proficiency_level": 3,
+          "proficiency_details": "5/18, Straskanie Tarczy"
+        },
+        {
+          "proficiency_name": "Włócznia o szerokim grocie",
+          "proficiency_level": 3,
+          "proficiency_details": "5/16, Celny Atak"
+        }
+      ],
+      "tags": [
+        "Okrutny",
+        "Zahartowany"
+      ]
+    },
+    {
+      "adversary_id": 1006,
+      "name": "Wielki troll jaskiniowy",
+      "description": "Ta ogromna bestia, której lękają się nawet poganiacze, służy orkom do rozbijania obrony oraz miażdzenia ducha najgroźniejszych nawet wrogów.",
+      "attribute_level": 10,
+      "endurance": 80,
+      "might": 2,
+      "hate": 10,
+      "parry": "-1",
+      "armour": 3,
+      "category_id": 0,
+      "race_id": 2,
+      "fell_abilities": [
+        {
+          "ability_name": "Wzbudzenie Strachu",
+          "ability_description": "Wydaj 1 punkt Nienawiści, by wszyscy Bohaterowie w zasięgu wzroku otrzymali 2 punkty Cienia (Groza). Postaci, którym nie uda się Próba Cienia, są przerażone i przez resztę potyczki nie mogą wydawać Nadziei."
+        },
+        {
+          "ability_name": "Gruba Skóra",
+          "ability_description": "Wydaj 1 punkt Nienawiści, by dodać (2k) do testu PANCERZA."
+        }
+      ],
+      "combat_proficiencies": [
+        {
+          "proficiency_name": "Miażdżenie",
+          "proficiency_level": 3,
+          "proficiency_details": "6/12, Pochwycenie"
+        },
+        {
+          "proficiency_name": "Ugryzienie",
+          "proficiency_level": 2,
+          "proficiency_details": "6/14, Celny Atak"
+        }
+      ],
+      "tags": [
+        "Brutalny",
+        "Nikczemny"
+      ]
+    },
+    {
+      "adversary_id": 1006,
+      "name": "Troll jaskiniowy - niuchacz",
+      "description": "Ta odmiana trolla jaskiniowego jest nieco mniejsza od innych, choć wciąż przewyższa rozmiarami orków. Niuchacze doskonale radzą sobie głęboko pod ziemią, polując samotnie i w zupełnej ciemności – jak nikt potrafią bowiem zwęszyć ofiarę.",
+      "attribute_level": 6,
+      "endurance": 50,
+      "might": 2,
+      "hate": 6,
+      "parry": "-1",
+      "armour": 3,
+      "category_id": 0,
+      "race_id": 2,
+      "fell_abilities": [
+        {
+          "ability_name": "Upodobanie Do Ciemności",
+          "ability_description": "W ciemnościach wszystkie twoje rzuty za atak są Wzmocnione."
+        },
+        {
+          "ability_name": "Strach Przed Ogniem",
+          "ability_description": "Tracisz 1 punkt Nienawiści na początku każdej rundy, gdy jesteś związany walką wręcz z przeciwnikiem niosącym pochodnię albo inny płonący przedmiot."
+        },
+        {
+          "ability_name": "Gruba Skóra",
+          "ability_description": "Wydaj 1 punkt Nienawiści, by dodać (2k) do testu PANCERZA."
+        }
+      ],
+      "combat_proficiencies": [
+        {
+          "proficiency_name": "Maczuga",
+          "proficiency_level": 3,
+          "proficiency_details": "6/16, Strzaskanie Tarczy"
+        },
+        {
+          "proficiency_name": "Ugryzienie",
+          "proficiency_level": 2,
+          "proficiency_details": "6/14, Celny Atak"
+        }
+      ],
+      "tags": [
+        "Nieuchwytny",
+        "Przezorny"
+      ]
+    },
+    {
+      "adversary_id": 1007,
+      "name": "Troll kamienny - łupieżca",
+      "description": "Choć taki troll wygląda równie straszliwie, jak inni przedstawiciele tego rodzaju, wydaje się mniej potworny – a to dla tej przyczyny, że ma w zwyczaju nosić zgrzebne ubrania, gotować posiłki i używać prostych narzędzi, na przykład kubków i beczek.",
+      "attribute_level": 8,
+      "endurance": 60,
+      "might": 2,
+      "hate": 8,
+      "parry": "-",
+      "armour": 3,
+      "category_id": 0,
+      "race_id": 2,
+      "fell_abilities": [
+        {
+          "ability_name": "Nienawiść",
+          "ability_description": "Gdy walczysz z krasnoludami, twoje testy ataku zostają Wzmocnione."
+        },
+        {
+          "ability_name": "Straszliwa Siła",
+          "ability_description": "Jeżeli Przełamałeś Obronę wroga atakiem wręcz, wydaj 1 punkt Nienawiści, by Osłabić test PANCERZA trafionego nieprzyjaciela."
+        }
+      ],
+      "combat_proficiencies": [
+        {
+          "proficiency_name": "Maczuga",
+          "proficiency_level": 3,
+          "proficiency_details": "6/16, Strzaskanie Tarczy"
+        },
+        {
+          "proficiency_name": "Miażdżenie",
+          "proficiency_level": 2,
+          "proficiency_details": "6/12, Pochwycenie"
+        }
+      ],
+      "tags": [
+        "Głodny",
+        "Drażliwy"
+      ]
+    },
+    {
+      "adversary_id": 1008,
+      "name": "Troll kamienny - wódz",
+      "description": "Zdarza się, że na czele grupy kamiennych trollów staje najsilniejszy jej członek. Pod jego wodzą banda napada na kupców i samotne domostwa.",
+      "attribute_level": 9,
+      "endurance": 700,
+      "might": 2,
+      "hate": 9,
+      "parry": "-",
+      "armour": 3,
+      "category_id": 0,
+      "race_id": 2,
+      "fell_abilities": [
+        {
+          "ability_name": "Nienawiść",
+          "ability_description": "Gdy walczysz z krasnoludami, twoje testy ataku zostają Wzmocnione."
+        },
+        {
+          "ability_name": "Straszliwa Siła",
+          "ability_description": "Jeżeli Przełamałeś Obronę wroga atakiem wręcz, wydaj 1 punkt Nienawiści, by Osłabić test PANCERZA trafionego nieprzyjaciela."
+        },
+        {
+          "ability_name": "Triumfalny Wrzask",
+          "ability_description": "Wydaj 1 punkt Nienawiści, by przywrócić po 1 punkcie Nienawiści pozostałym orkom w potyczce."
+        }
+      ],
+      "combat_proficiencies": [
+        {
+          "proficiency_name": "Maczuga",
+          "proficiency_level": 3,
+          "proficiency_details": "6/16, Strzaskanie Tarczy"
+        },
+        {
+          "proficiency_name": "Miażdżenie",
+          "proficiency_level": 2,
+          "proficiency_details": "6/12, Pochwycenie"
+        }
+      ],
+      "tags": [
+        "Okrutny",
+        "Podejrzliwy"
+      ]
+    },
+    {
+      "adversary_id": 1009,
+      "name": "Upiór kurhanu",
+      "description": "Upiory kurhanów przybyły na wzgórza Tyrn Gorthad z rozkazu Czarnoksiężnika z Angmaru, by wesprzeć go w wojnach przeciw królestwu Arnoru. Objawiają się jako wysokie i mroczne postaci o zimnych oczach pałających bladym światłem. Na kościanych palcach noszą pierścienie, a wokół zwiędłych szyi owijają złote łańcuchy. W dłoniach dzierżą pradawne, wyszczerbione miecze.",
+      "attribute_level": 6,
+      "endurance": 24,
+      "might": 1,
+      "hate": 6,
+      "parry": "-",
+      "armour": 2,
+      "category_id": 0,
+      "race_id": 12,
+      "fell_abilities": [
+        {
+          "ability_name": "Upodobanie Do Ciemności",
+          "ability_description": "W ciemnościach wszystkie twoje rzuty na atak są Wzmocnione."
+        },
+        {
+          "ability_name": "Złowrogie Czary",
+          "ability_description": "Wydaj 1 punkt Nienawiści, by jeden z Bohaterów otrzymał 3 punkty Cienia (Czarnoksięstwo). Jeżeli celowi nie uda się Próba Cienia albo pogodził się z Przypiętnieniem, reakcją przeciwników może go gubić wykrzykiwana testująca PIEŚŃ. Sam onśnie się ogólnie."
+        },
+        {
+          "ability_name": "Wstręt Do Słońca",
+          "ability_description": "Tracisz 1 punkt Nienawiści w każdej turze, w której oświetlają cię bezpośrednio promienie słońca."
+        }
+      ],
+      "combat_proficiencies": [
+        {
+          "proficiency_name": "Pradawny miecz",
+          "proficiency_level": 3,
+          "proficiency_details": "5/16, Celny atak"
+        },
+        {
+          "proficiency_name": "Lodowaty dotyk",
+          "proficiency_level": 2,
+          "proficiency_details": "6/12, Pochwycenie"
+        }
+      ],
+      "tags": [
+        "Chytry",
+        "Mściwy"
+      ]
+    },
+    {
+      "adversary_id": 1010,
+      "name": "Złowroga zjawa",
+      "description": "Złowroga zjawa przyjmuje postać wędrowca, przemierzającego dawne ruiny, zgarbionego i okutango w płaszcz z kapturem, pod którym kryje oblicze upiora. Ciało ma niemal przezroczyste, a jej oczy lśnią jak rozżarzone węgle. Napatkana o zmroku może ująć za człowieka, potrafi bowiem mówić, choć głos ma syczący, a wymowę – dziwaczną. Złowrogie zjawy nie rozstają się ze starożytną bronią i potłuczonymi tarczami, pamiątkami dawnych wojen. Władają nimi z przerażającą wprawą.",
+      "attribute_level": 4,
+      "endurance": 16,
+      "might": 1,
+      "hate": 4,
+      "parry": "-1",
+      "armour": 2,
+      "category_id": 0,
+      "race_id": 12,
+      "fell_abilities": [
+        {
+          "ability_name": "Upodobanie Do Ciemności",
+          "ability_description": "W ciemnościach wszystkie twoje rzuty na atak są Wzmocnione."
+        },
+        {
+          "ability_name": "Strach Przed Ogniem",
+          "ability_description": "Tracisz 1 punkt Nienawiści na początku każdej rundy, gdy jesteś związany walką wręcz z przeciwnikiem niosącym pochodnię albo inny płonący przedmiot."
+        }
+      ],
+      "combat_proficiencies": [
+        {
+          "proficiency_name": "Wyszczerbiony miecz",
+          "proficiency_level": 3,
+          "proficiency_details": "4/16"
+        },
+        {
+          "proficiency_name": "Okrutna włócznia",
+          "proficiency_level": 2,
+          "proficiency_details": "4/14, Celny Atak"
+        }
+      ],
+      "tags": [
+        "Chyża",
+        "Przezorna"
+      ]
+    },
+    {
+      "adversary_id": 1012,
+      "name": "Istota z bagien",
+      "description": "Istoty z bagien to niezdborne, czekokopodobne stwory o chorobliwej, bladej skórze – jak u zwłok, które zbyt długo leżały w wodzie. Ale paskudny blask ich malutkich oczu zdradza ogromną wniośliwość i głęboką niegodziwość. Żyją pośród ruin, w dawnych siedzibach ludzi, najczęściej w pobliżu rozlewisk ciemnej, zatęchłej wody. Kryją się pod ziemią w niewielkich grupach, zawsze gotowe porwać nieświadomych wędrowców i zaciągnąć do głębokich piwnic, gdzie z upodobaniem gromadzą złoto.",
+      "attribute_level": 3,
+      "endurance": 12,
+      "might": 1,
+      "hate": 3,
+      "parry": "-1",
+      "armour": 1,
+      "category_id": 0,
+      "race_id": 11,
+      "fell_abilities": [
+        {
+          "ability_name": "Strach Przed Ogniem",
+          "ability_description": "Tracisz 1 punkt Nienawiści na początku każdej rundy, gdy jesteś związany walką wręcz z przeciwnikiem niosącym pochodnię albo inny płonący przedmiot."
+        },
+        {
+          "ability_name": "Wstręt Do Słońca",
+          "ability_description": "Tracisz 1 punkt Nienawiści w każdej turze, w której oświetlają cię bezpośrednio promienie słońca."
+        }
+      ],
+      "combat_proficiencies": [
+        {
+          "proficiency_name": "Kły",
+          "proficiency_level": 3,
+          "proficiency_details": "3/14, Celny Atak"
+        },
+        {
+          "proficiency_name": "Pazury",
+          "proficiency_level": 2,
+          "proficiency_details": "3/14, Pochwycenie"
+        }
+      ],
+      "tags": [
+        "Popędliwa",
+        "Nieuchwytna"
+      ]
+    },
+    {
+      "adversary_id": 1013,
+      "name": "Dziki wilk",
+      "description": "To przeciętnych rozmiarów warg, tylko nieco większy od zwyczajnego wilka – ale po stokroć bardziej zajadły. Zwykle trzyma się watahy, ale czasem napotkać można samotnego myśliwego albo zwiadowcę, gotowego ostrzec innych wargów i różne inne istoty przenikliwym wyciem, które niesie się na wiele mil. Orkowie dosiadają czasem dzikich wilków tak, jak ludzie koni.",
+      "attribute_level": 3,
+      "endurance": 12,
+      "might": 1,
+      "hate": 3,
+      "parry": "-",
+      "armour": 1,
+      "category_id": 0,
+      "race_id": 13,
+      "fell_abilities": [
+        {
+          "ability_name": "Strach Przed Ogniem",
+          "ability_description": "Tracisz 1 punkt Nienawiści na początku każdej rundy, gdy jesteś związany walką wręcz z przeciwnikiem niosącym pochodnię albo inny płonący przedmiot."
+        },
+        {
+          "ability_name": "Wężowa Szybkość",
+          "ability_description": "Gdy jesteś atakowany, wydaj 1 punkt Nienawiści, by Osłabić test trafienia."
+        }
+      ],
+      "combat_proficiencies": [
+        {
+          "proficiency_name": "Kły",
+          "proficiency_level": 3,
+          "proficiency_details": "3/14, Celny Atak"
+        }
+      ],
+      "tags": [
+        "Bystrooki",
+        "Ponury"
+      ]
+    },
+    {
+      "adversary_id": 1013,
+      "name": "Przewodnik watahy",
+      "description": "Przewodnik watahy góruje nad pozostałymi wargami rozmiarem, okrucieństwem i sprytem – dlatego stado gromadzi się przy nim w chwilach zagrożenia, na przykład, kiedy jego terytorium naruszy banda wędrownych poszukiwaczy przygód. Przewodnik nigdy nie wędruje sam i spotkać go można tylko w otoczeniu zgrai dzikich wilków.",
+      "attribute_level": 4,
+      "endurance": 16,
+      "might": 1,
+      "hate": 4,
+      "parry": "-",
+      "armour": 1,
+      "category_id": 0,
+      "race_id": 13,
+      "fell_abilities": [
+        {
+          "ability_name": "Strach Przed Ogniem",
+          "ability_description": "Tracisz 1 punkt Nienawiści na początku każdej rundy, gdy jesteś związany walką wręcz z przeciwnikiem niosącym pochodnię albo inny płonący przedmiot."
+        },
+        {
+          "ability_name": "Wężowa Szybkość",
+          "ability_description": "Gdy jesteś atakowany, wydaj 1 punkt Nienawiści, by Osłabić test trafienia."
+        },
+        {
+          "ability_name": "Triumfalne Wycie",
+          "ability_description": "Wydaj 1 punkt Nienawiści, by przywrócić po 1 punkcie Nienawiści pozostałym wargom w potyczce."
+        }
+      ],
+      "combat_proficiencies": [
+        {
+          "proficiency_name": "Kły",
+          "proficiency_level": 3,
+          "proficiency_details": "3/14, Celny Atak"
+        }
+      ],
+      "tags": [
+        "Chyży",
+        "Zaciekły"
+      ]
+    },
+    {
+      "adversary_id": 1014,
+      "name": "Pies Saurona",
+      "description": "Pies Saurona to zaufany sługa Władcy Ciemności, wybrany przez wzgląd na brutalność i szczególnie pokrętny umysł. Zawsze realizuje konkretne zadanie: gromadzi siły na zbliżającą się wojnę, poluje na określoną osobę albo bada jakiś teren. Choć wygląda jak zwyczajny warg, w jego ciele drzemie daleko straszliwsza siła.",
+      "attribute_level": 5,
+      "endurance": 20,
+      "might": 2,
+      "hate": 5,
+      "parry": "+1",
+      "armour": 2,
+      "category_id": 0,
+      "race_id": 13,
+      "fell_abilities": [
+        {
+          "ability_name": "Śmiercionośne Uderzenie",
+          "ability_description": "Ranione przez ciebie cele wykonują Osłabiony rzut kością Działania, sprawdzając stopień Rany."
+        },
+        {
+          "ability_name": "Ohydna Żywotność",
+          "ability_description": "Nie można wyrazić ci krzywdy gołymi rękami. Nadto, gdy atak zada ci osobę zbronią, by zmniejszyć twoją Wytrzymałość o 2, zamiast tego wykonuje Przełamanie Obrony. Jeśli przetrwasz, twoja Wytrzymałość wzrasta do połowy maksymalnej wartości."
+        },
+        {
+          "ability_name": "Wzbudzenie Strachu",
+          "ability_description": "Wydaj 1 punkt Nienawiści, by wszyscy Bohaterowie w zasięgu wzroku otrzymali 2 punkty Cienia (Groza). Postaci, którym nie uda się Próba Cienia są przerażone i przez resztę potyczki nie mogą używać Nadziei."
+        }
+      ],
+      "combat_proficiencies": [
+        {
+          "proficiency_name": "Kły",
+          "proficiency_level": 3,
+          "proficiency_details": "5/14, Celny Atak"
+        },
+        {
+          "proficiency_name": "Pazury",
+          "proficiency_level": 3,
+          "proficiency_details": "5/14, Pochwycenie"
+        }
+      ],
+      "tags": [
+        "Chytry",
+        "Popędliwy"
+      ]
+    },
+    {
+      "adversary_id": 1015,
+      "name": "Zbir",
+      "description": "Tchórzliwy bandyta, który bez wahania obrabuje bezbronną ofiarę, ale na samotnego poszukiwacza przygód zasadza się wyłącznie z kamratami.",
+      "attribute_level": 2,
+      "endurance": 8,
+      "might": 1,
+      "hate": 2,
+      "parry": "-",
+      "armour": 1,
+      "category_id": 0,
+      "race_id": 5,
+      "fell_abilities": [
+        {
+          "ability_name": "Bojazliwość",
+          "ability_description": "Gdy znajdziesz się pod wpływem Zadania Bojowego Przerazić Wroga, tracisz 1 punkt Determinacji."
+        }
+      ],
+      "combat_proficiencies": [
+        {
+          "proficiency_name": "Pałka",
+          "proficiency_level": 2,
+          "proficiency_details": "3/12"
+        },
+        {
+          "proficiency_name": "Łuk",
+          "proficiency_level": 2,
+          "proficiency_details": "3/14, Celny Atak"
+        }
+      ],
+      "tags": [
+        "Zwinny",
+        "Przezorny"
+      ]
+    },
+    {
+      "adversary_id": 1016,
+      "name": "Herszt bandytów",
+      "description": "Naczelny bandyta jest silniejszy i bardziej zaciekły niż kamraci. Na swoją pozycję zapracował albo bystrością, albo pięścią.",
+      "attribute_level": 3,
+      "endurance": 12,
+      "might": 1,
+      "hate": 3,
+      "parry": "+1",
+      "armour": 2,
+      "category_id": 0,
+      "race_id": 5,
+      "fell_abilities": [
+        {
+          "ability_name": "Triumfalny Wrzask",
+          "ability_description": "Wydaj 1 punkt Determinacji, by przywrócić po 1 punkcie Determinacji pozostałym bandytom w potyczce."
+        }
+      ],
+      "combat_proficiencies": [
+        {
+          "proficiency_name": "Krótki miecz",
+          "proficiency_level": 3,
+          "proficiency_details": "3/16"
+        },
+        {
+          "proficiency_name": "Łuk",
+          "proficiency_level": 2,
+          "proficiency_details": "3/14, Celny Atak"
+        }
+      ],
+      "tags": [
+        "Bezwzględny",
+        "Skryty"
+      ]
+    },
+    {
+      "adversary_id": 1017,
+      "name": "Rozbójnik",
+      "description": "Rozbójnik jest daleko groźniejszy niż zwykły bandyta: nawykł do życia w dzikich ostępach i wie, jak radzić sobie z uzbrojonymi ofiarami.",
+      "attribute_level": 4,
+      "endurance": 16,
+      "might": 1,
+      "hate": 4,
+      "parry": "-",
+      "armour": 2,
+      "category_id": 0,
+      "race_id": 5,
+      "fell_abilities": [
+        {
+          "ability_name": "Wężowa Szybkość",
+          "ability_description": "Gdy jesteś atakowany, wydaj 1 punkt Determinacji, by Osłabić test trafienia."
+        }
+      ],
+      "combat_proficiencies": [
+        {
+          "proficiency_name": "Włócznia",
+          "proficiency_level": 3,
+          "proficiency_details": "4/14, Celny Atak"
+        },
+        {
+          "proficiency_name": "Łuk",
+          "proficiency_level": 2,
+          "proficiency_details": "3/14, Celny Atak"
+        }
+      ],
+      "tags": [
+        "Chyży",
+        "Mściwy"
+      ]
+    },
+    {
+      "adversary_id": 1018,
+      "name": "Najeźdźca z Południa",
+      "description": "Gdy mija szczególnie ciężka zima, ludziom z Południa zdarza się zbierać w zbrojne bandy, które z zaskoczenia napadają na samotne domostwa, grabia je i co rychlej rozpływają się we mgle, z której się wyłoniły.",
+      "attribute_level": 4,
+      "endurance": 16,
+      "might": 1,
+      "hate": 4,
+      "parry": "+1",
+      "armour": 2,
+      "category_id": 0,
+      "race_id": 5,
+      "fell_abilities": [
+        {
+          "ability_name": "Wojowniczość",
+          "ability_description": "Wydaj 1 punkt Determinacji, by dodać (1k) i Wzmocnić rzut na atak."
+        }
+      ],
+      "combat_proficiencies": [
+        {
+          "proficiency_name": "Topór",
+          "proficiency_level": 3,
+          "proficiency_details": "5/18"
+        },
+        {
+          "proficiency_name": "Krótka włócznia",
+          "proficiency_level": 2,
+          "proficiency_details": "3/14, Celny Atak"
+        }
+      ],
+      "tags": [
+        "Sprytny",
+        "Zaharowany"
+      ]
+    },
+    {
+      "adversary_id": 1019,
+      "name": "Mocarz z Południa",
+      "description": "Mocarzem z Południa może być z równym powodzeniem wódz plemienia z Dunlandu, przywódca bandytów, który połączył poważniejsze bandy rabusiów w niewielką armię, albo po prostu szczególnie tęgi zbir.",
+      "attribute_level": 5,
+      "endurance": 20,
+      "might": 1,
+      "hate": 5,
+      "parry": "+2",
+      "armour": 3,
+      "category_id": 0,
+      "race_id": 5,
+      "fell_abilities": [
+        {
+          "ability_name": "Wojowniczość",
+          "ability_description": "Wydaj 1 punkt Determinacji, by dodać (1k) i Wzmocnić rzut na atak."
+        }
+      ],
+      "combat_proficiencies": [
+        {
+          "proficiency_name": "Włócznia",
+          "proficiency_level": 3,
+          "proficiency_details": "4/14, Celny Atak"
+        },
+        {
+          "proficiency_name": "Topór na długim stylisku",
+          "proficiency_level": 3,
+          "proficiency_details": "6/18, Strzaskanie Tarczy"
+        }
+      ],
+      "tags": [
+        "Okrutny",
+        "Mocarny"
+      ]
+    },
+    {
+      "adversary_id": 1020,
+      "name": "Búrzgul",
+      "description": "Wojowniczy Búrzgul jest nikczemnym orkiem, wodzem obszarpanej bandy, która zeszła aż z Bramy Goblinów w Górach Mglistych, by dołączyć do wilków z Ciemnych Jam. Usłyszał o tym miejscu od swego najbardziej zaufanego kamrata, ogromnego warga imieniem Szlaka, o futrze czarnym jak noc i płonących żółtych oczach. Jak na razie nikt, nawet Strażnicy Północy, nie ma pojęcia, że na Południowych Wzgórzach zaległo się nowe zagrożenie. Orkowie i wilki czekają na jakąś większą sposobność, póki co przeprowadzili tylko kilka świetnie obmyślonych ataków, z których nikt nie uszedł z życiem. Najgorsze jest jednak to, że Búrzgul regularnie się posłańców do większych skupisk orków w Angmarze i Górach Mglistych, więc nowiny z Bree bardzo szybko docierają do uszu agentów Cienia.",
+      "attribute_level": 5,
+      "endurance": 22,
+      "might": 1,
+      "hate": 5,
+      "parry": "+3",
+      "armour": 3,
+      "category_id": 0,
+      "race_id": 7,
+      "fell_abilities": [
+        {
+          "ability_name": "Orkowa Trucizna",
+          "ability_description": "Jeżeli twój atak zada Ranę, cel zostaje zatruty (efekty działania trucizny opisano na stronie 134)."
+        },
+        {
+          "ability_name": "Triumfalny Wrzask",
+          "ability_description": "Wydaj 1 punkt Nienawiści, by przywrócić po 1 punkcie Nienawiści pozostałym orkom w potyczce."
+        },
+        {
+          "ability_name": "Wężowa Szybkość",
+          "ability_description": "Gdy jesteś atakowany, wydaj 1 punkt Nienawiści, by Osłabić test trafienia."
+        }
+      ],
+      "combat_proficiencies": [
+        {
+          "proficiency_name": "Ciężka szabla",
+          "proficiency_level": 3,
+          "proficiency_details": "3/16, Strzaskanie Tarczy"
+        },
+        {
+          "proficiency_name": "Włócznia",
+          "proficiency_level": 2,
+          "proficiency_details": "3/14, Celny Atak"
+        }
+      ],
+      "tags": [
+        "Okrutny",
+        "Bystrooki"
+      ]
+    },
+    {
+      "adversary_id": 1021,
+      "name": "Szlaka",
+      "description": "Szlaka to ogromny warg o futrze czarnym jak noc i płonących żółtych oczach. Jest zaufanym kamratem Búrzgula, z którym razem planują ataki z ukrycia. Potrafi poruszać się w ciszy i niespodziewanie atakować z wielką zajadłością, łącząc zęby i pazury w śmiertelnych kombinacjach.",
+      "attribute_level": 4,
+      "endurance": 20,
+      "might": 1,
+      "hate": 4,
+      "parry": "+2",
+      "armour": 1,
+      "category_id": 0,
+      "race_id": 7,
+      "fell_abilities": [
+        {
+          "ability_name": "Strach Przed Ogniem",
+          "ability_description": "Tracisz 1 punkt Nienawiści na początku każdej rundy, gdy jesteś związany walką wręcz z przeciwnikiem niosącym pochodnię albo inny płonący przedmiot."
+        },
+        {
+          "ability_name": "Wściekły Atak",
+          "ability_description": "Wydaj 1 punkt Nienawiści po ataku Zębiskami, by natychmiast zaatakować ten sam cel Pazurami."
+        }
+      ],
+      "combat_proficiencies": [
+        {
+          "proficiency_name": "Zębiska",
+          "proficiency_level": 3,
+          "proficiency_details": "4/14, Celny Atak"
+        },
+        {
+          "proficiency_name": "Pazury",
+          "proficiency_level": 2,
+          "proficiency_details": "5/14"
+        }
+      ],
+      "tags": [
+        "Rozumny",
+        "Chyży"
       ]
     }
   ]

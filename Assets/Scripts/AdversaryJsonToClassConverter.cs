@@ -33,6 +33,10 @@ namespace Assets.Scripts
                 adversary.Category = adversaryData.Categories.FirstOrDefault(c => c.CategoryId == adversary.CategoryId);
                 adversary.Race = adversaryData.Races.FirstOrDefault(r => r.RaceId == adversary.RaceId);
                 adversary.Story = adversaryData.Stories.FirstOrDefault(s => s.StoryId == adversary.StoryId);
+                if (adversary.Race != null && adversary.Race.CommonFellAbilities != null && adversary.Race.CommonFellAbilities.Any())
+                {
+                    adversary.FellAbilities.AddRange(adversary.Race.CommonFellAbilities);
+                }
             }
 
             return adversaryData.Adversaries;
