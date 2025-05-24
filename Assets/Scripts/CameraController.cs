@@ -25,6 +25,10 @@ public class CameraController : MonoBehaviour
     public Vector3 rotateStartPosition;
     public Vector3 rotateCurrentPosition;
 
+    private Vector3 initialPosition;
+    private Quaternion initialRotation;
+    private Vector3 initialZoom;
+
     private bool _inputEnabled = true;
 
     void Start()
@@ -32,6 +36,11 @@ public class CameraController : MonoBehaviour
         newPosition = transform.position;
         newRotation = transform.rotation;
         newZoom = cameraTransform.localPosition;
+
+        initialPosition = newPosition;
+        initialRotation = newRotation;
+        initialZoom = newZoom;
+
         EventManager.AddListener(nameof(FocusInEvent), DisableInput);
         EventManager.AddListener(nameof(FocusOutEvent), EnableInput);
     }
@@ -157,6 +166,13 @@ public class CameraController : MonoBehaviour
         if (Input.GetKey(KeyCode.KeypadMinus))
         {
             newZoom -= zoomAmount;
+        }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            newPosition = initialPosition;
+            newRotation = initialRotation;
+            newZoom = initialZoom;
         }
 
         transform.position = Vector3.Lerp(transform.position, newPosition, Time.deltaTime * movementTime);

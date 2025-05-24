@@ -252,6 +252,6 @@ public class BuildingManager : MonoBehaviour
 
     public void RotateObject()
     {
-        pendingObject.transform.Rotate(Vector3.left, rotateAmount);
+        pendingObject.transform.Rotate(Vector3.forward, rotateAmount);
     }
 }
