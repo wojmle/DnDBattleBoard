@@ -5,15 +5,17 @@ using UnityEngine.UI;
 public class HealthBarUI : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI healthText;
+    [SerializeField] private TextMeshProUGUI nameText;
     [SerializeField] private Image backgroundImage;
     
     private Transform target;
     private Vector3 offset;
 
-    public void Initialize(Transform target, Vector3 offset)
+    public void Initialize(Transform target, Vector3 offset, string name)
     {
         this.target = target;
         this.offset = offset;
+        nameText.text = name;
     }
 
     public void SetHealth(int current)

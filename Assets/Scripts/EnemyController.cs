@@ -80,6 +80,15 @@ public class EnemyController : MonoBehaviour
         healthBar = bar;
     }
 
+    public void RemoveHealthBar()
+    {
+        if (healthBar != null)
+        {
+            Destroy(healthBar.gameObject);
+            healthBar = null;
+        }
+    }
+
     public string FormatCombatProficiencies(Adversary adversary)
     {
         if (adversary.CombatProficiencies == null || adversary.CombatProficiencies.Count == 0)

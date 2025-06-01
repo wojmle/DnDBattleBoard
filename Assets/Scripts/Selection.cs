@@ -126,6 +126,13 @@ public class Selection : MonoBehaviour
     public void Delete()
     {
         GameObject objToDestroy = selectedObject;
+        // Remove the health bar if this is an enemy
+        var enemyController = objToDestroy.GetComponent<EnemyController>();
+        if (enemyController != null)
+        {
+            enemyController.RemoveHealthBar();
+        }
+
         Deselect();
         Destroy(objToDestroy);
     }

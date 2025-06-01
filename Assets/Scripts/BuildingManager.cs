@@ -221,7 +221,7 @@ public class BuildingManager : MonoBehaviour
             {
                 enemyController.adversary = adversary;
                 var healthBarInstance = Instantiate(healthBarPrefab, worldSpaceCanvas.transform).GetComponent<HealthBarUI>();
-                healthBarInstance.Initialize(pendingObject.transform, new Vector3(0, 2, 0));
+                healthBarInstance.Initialize(pendingObject.transform, new Vector3(0, 1.5f, 0), enemyController.adversary.Name);
                 healthBarInstance.SetHealth(adversary.Endurance);
 
                 // Assign reference
