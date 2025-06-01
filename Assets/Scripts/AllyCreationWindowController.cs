@@ -27,7 +27,6 @@ namespace Assets
         private bool _isResizing;
         private VisualElement _rootElement;
         private VisualElement _resizeHandle;
-        private BuildingManager buildingManager;
         private Dictionary<string, List<string>> raceModelDictionary;
         public static string allyPath = "Assets/Prefabs/Ally";
 
@@ -60,11 +59,10 @@ namespace Assets
             }
 
             var main_root = root.Q<VisualElement>("main-root");
-            var resize_handle_top = root.Q<VisualElement>("resize-handle-top");
             var resize_handle_bottom = root.Q<VisualElement>("resize-handle-bottom");
             var resize_handle_left = root.Q<VisualElement>("resize-handle-left");
             var resize_handle_right = root.Q<VisualElement>("resize-handle-right");
-            if (resize_handle_top != null && resize_handle_bottom != null && resize_handle_right != null && resize_handle_left != null && main_root != null)
+            if (resize_handle_bottom != null && resize_handle_right != null && resize_handle_left != null && main_root != null)
             {
                 main_root.RegisterCallback<FocusInEvent>(evt =>
                 {
@@ -74,13 +72,10 @@ namespace Assets
                 {
                     EventManager.TriggerEvent(nameof(FocusOutEvent));
                 });
-                resize_handle_top.AddManipulator(new ResizeManipulator(main_root));
                 resize_handle_bottom.AddManipulator(new ResizeManipulator(main_root));
                 resize_handle_left.AddManipulator(new ResizeManipulator(main_root));
                 resize_handle_right.AddManipulator(new ResizeManipulator(main_root));
             }
-
-            buildingManager = FindFirstObjectByType<BuildingManager>();
 
             var closeButton = root.Q<Button>("close-button");
             var actionButton = root.Q<Button>("action-button");
@@ -163,7 +158,8 @@ namespace Assets
             if (_raceDropdown.value != null && _nameTextField != null && _raceDropdown.value != null)
             {
                 var selected = new Ally(_nameTextField.value, _raceDropdown.value, _modelDropdown.value);
-                buildingManager.InsertObject(selected);
+                EventManager.TriggerEvent("AllyAdded", selected);
+                //buildingManager.InsertObject(selected);
             }
         }
     }

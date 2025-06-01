@@ -5077,7 +5077,7 @@
       "parry": "+2",
       "armour": 4,
       "category_id": 6,
-      "race_id": 1,
+      "race_id": 5,
       "story_id": 21,
       "fell_abilities": [
         {
@@ -5112,7 +5112,7 @@
       "parry": "+1",
       "armour": 3,
       "category_id": 6,
-      "race_id": 1,
+      "race_id": 5,
       "story_id": 21,
       "fell_abilities": [],
       "combat_proficiencies": [
@@ -5717,7 +5717,7 @@
       "parry": "+2",
       "armour": 3,
       "category_id": 7,
-      "race_id": 1,
+      "race_id": 5,
       "story_id": 26,
       "fell_abilities": [
         {

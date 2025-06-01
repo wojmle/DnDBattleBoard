@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    private HealthBarUI healthBar;
     public Adversary adversary;
     private string characterRace;
     private string bieglosciBojowe;
@@ -39,6 +40,8 @@ public class EnemyController : MonoBehaviour
         if (characterStats.ContainsKey(key))
         {
             characterStats[key] += 1;
+            if (key == nameof(Adversary.Endurance) && healthBar != null)
+                healthBar.SetHealth(characterStats[key]);
         }
     }
 
@@ -47,6 +50,8 @@ public class EnemyController : MonoBehaviour
         if (characterStats.ContainsKey(key))
         {
             characterStats[key] -= 1;
+            if (key == nameof(Adversary.Endurance) && healthBar != null)
+                healthBar.SetHealth(characterStats[key]);
         }
     }
 
@@ -68,6 +73,11 @@ public class EnemyController : MonoBehaviour
     public Dictionary<string,int> GetCharacterStats()
     {
         return characterStats;
+    }
+
+    public void SetHealthBar(HealthBarUI bar)
+    {
+        healthBar = bar;
     }
 
     public string FormatCombatProficiencies(Adversary adversary)

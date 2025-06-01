@@ -9,6 +9,8 @@ using Assets.Scripts;
 
 public class BuildingManager : MonoBehaviour
 {
+    public Canvas worldSpaceCanvas;
+    public GameObject healthBarPrefab;
     public GameObject[] adversaryPrefabs;
     public GameObject[] allyPrefabs;
     public GameObject[] objects;
@@ -217,7 +219,14 @@ public class BuildingManager : MonoBehaviour
             var enemyController = pendingObject.GetComponent<EnemyController>();
             if (enemyController != null && modelObject is Adversary {} adversary)
             {
-                enemyController.adversary = adversary;          
+                enemyController.adversary = adversary;
+                var healthBarInstance = Instantiate(healthBarPrefab, worldSpaceCanvas.transform).GetComponent<HealthBarUI>();
+                healthBarInstance.Initialize(pendingObject.transform, new Vector3(0, 2, 0));
+                healthBarInstance.SetHealth(adversary.Endurance);
+
+                // Assign reference
+                enemyController.SetHealthBar(healthBarInstance);
+
                 defaultMaterial = pendingObject.GetComponent<MeshRenderer>().material;
                 return;
             }

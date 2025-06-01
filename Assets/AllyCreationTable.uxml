@@ -11,7 +11,6 @@
             <engine:DropdownField label="Model" name="model-dropdown" tabindex="-1" />
         </engine:VisualElement>
         <engine:Button text="Create" name="action-button" style="background-color: rgb(249, 229, 185);" />
-        <engine:VisualElement name="resize-handle-top" class="resize-handle resize-handle-top" style="flex-grow: 1;" />
         <engine:VisualElement name="resize-handle-bottom" class="resize-handle resize-handle-bottom" style="flex-grow: 1;" />
         <engine:VisualElement name="resize-handle-left" class="resize-handle resize-handle-left" style="flex-grow: 1;" />
         <engine:VisualElement name="resize-handle-right" class="resize-handle resize-handle-right" style="flex-grow: 1;" />

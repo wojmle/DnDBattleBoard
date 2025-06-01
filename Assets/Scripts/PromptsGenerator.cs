@@ -14,10 +14,14 @@ public class PromptsGenerator : MonoBehaviour
         "sword", "axe", "bow", "spear", "dagger", "mace", "club", "staff",
         "hammer", "whip", "crossbow", "shield", "blade", "halberd", "scythe",
         "flail", "polearm", "morning star", "javelin", "saber", "cleaver", "scimitar", "knife",
+        
+        "pike", "mattock", "rake",
 
         "miecz", "topór", "³uk", "w³ócznia", "sztylet", "bu³awa", "maczuga",
         "kij", "m³ot", "bat", "kusza", "tarcza", "ostrze", "halabarda", "kosa",
-        "cep", "drzewiec", "gwiazda poranna", "oszczep", "szabla", "tasak", "nó¿"
+        "cep", "drzewiec", "gwiazda poranna", "oszczep", "szabla", "tasak", "nó¿",
+
+        "pa³ka"
     };
 
     bool IsLikelyWeapon(string name)
@@ -42,7 +46,9 @@ public class PromptsGenerator : MonoBehaviour
 
         var converter = new AdversaryToJsonClassConverter();
         var adversaries = converter.CreateAdversaryList();
-
+        var combatProficiencies = adversaries.Where(x => x.CombatProficiencies != null)
+            .SelectMany(x => x.CombatProficiencies).Select(cp => cp.ProficiencyName).Distinct().ToList();
+        var notWeapons = combatProficiencies.Where(x => !IsLikelyWeapon(x));
         var sb = new StringBuilder();
         sb.AppendLine("Adversary ID;Name;Race;Prompt");
 
