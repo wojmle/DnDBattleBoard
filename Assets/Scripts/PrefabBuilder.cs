@@ -21,6 +21,7 @@ public class PrefabBuilder
             string assetPath = AssetDatabase.GUIDToAssetPath(guid);
             GameObject fbx = AssetDatabase.LoadAssetAtPath<GameObject>(assetPath);
             GameObject instance = GameObject.Instantiate(fbx);
+            instance.transform.localScale = new Vector3(1000f, 1000f, 1000f); // Adjust scale as needed
 
             // Add required components
             var rb = instance.GetComponent<Rigidbody>();
