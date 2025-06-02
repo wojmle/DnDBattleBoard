@@ -6,6 +6,7 @@ using UnityEngine;
 public class AllyController : MonoBehaviour
 {
     public Ally allyObject;
+    private NameBarUI nameBarUI;
     private string characterName;
     private string characterRace;
 
@@ -24,5 +25,19 @@ public class AllyController : MonoBehaviour
     public string GetCharacterName()
     {
         return characterName;
+    }
+
+    public void SetUIBar(NameBarUI bar)
+    {
+        nameBarUI = bar;
+    }
+
+    public void RemoveUIBar()
+    {
+        if (nameBarUI != null)
+        {
+            Destroy(nameBarUI.gameObject);
+            nameBarUI = null;
+        }
     }
 }

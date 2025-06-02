@@ -11,6 +11,7 @@ public class BuildingManager : MonoBehaviour
 {
     public Canvas worldSpaceCanvas;
     public GameObject healthBarPrefab;
+    public GameObject nameBarPrefab;
     public GameObject[] adversaryPrefabs;
     public GameObject[] allyPrefabs;
     public GameObject[] objects;
@@ -33,6 +34,7 @@ public class BuildingManager : MonoBehaviour
     private int objectIndex;
     private Material defaultMaterial;
     private float pendingObjectOffset = 0f;
+    private float pendingHealthBarOffset = 0f;
 
     private string adversaryPrefabPath = "Assets/Prefabs/Adversary";
     private string allyPrefabPath = "Assets/Prefabs/Ally";
@@ -213,6 +215,7 @@ public class BuildingManager : MonoBehaviour
 
                 float lowestY = combinedBounds.min.y;
                 pendingObjectOffset = 0f - lowestY;
+                pendingHealthBarOffset = combinedBounds.max.y + 2f;
             }
 
             // Get the EnemyController component from the instantiated object
@@ -221,7 +224,7 @@ public class BuildingManager : MonoBehaviour
             {
                 enemyController.adversary = adversary;
                 var healthBarInstance = Instantiate(healthBarPrefab, worldSpaceCanvas.transform).GetComponent<HealthBarUI>();
-                healthBarInstance.Initialize(pendingObject.transform, new Vector3(0, 10f, 0), enemyController.adversary.Name);
+                healthBarInstance.Initialize(pendingObject.transform, new Vector3(0, pendingHealthBarOffset - pendingObject.transform.position.y, 0), enemyController.adversary.Name);
                 healthBarInstance.transform.localScale = pendingObject.transform.localScale/100f;
                 healthBarInstance.SetHealth(adversary.Endurance);
 
@@ -235,7 +238,13 @@ public class BuildingManager : MonoBehaviour
             var allyController = pendingObject.GetComponent<AllyController>();
             if (allyController != null && modelObject is Ally { } ally)
             {
-                allyController.allyObject = ally; 
+                allyController.allyObject = ally;
+                var nameBarUI = Instantiate(nameBarPrefab, worldSpaceCanvas.transform).GetComponent<NameBarUI>();
+                nameBarUI.Initialize(pendingObject.transform, new Vector3(0, pendingHealthBarOffset - pendingObject.transform.position.y, 0), allyController.allyObject.Name);
+                nameBarUI.transform.localScale = pendingObject.transform.localScale / 100f;
+
+                allyController.SetUIBar(nameBarUI);
+                
                 defaultMaterial = pendingObject.GetComponent<MeshRenderer>().material;
                 return;
             }

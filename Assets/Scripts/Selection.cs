@@ -132,6 +132,11 @@ public class Selection : MonoBehaviour
         {
             enemyController.RemoveHealthBar();
         }
+        var allyController = objToDestroy.GetComponent<AllyController>();
+        if (allyController != null)
+        {
+            allyController.RemoveUIBar();
+        }
 
         Deselect();
         Destroy(objToDestroy);
