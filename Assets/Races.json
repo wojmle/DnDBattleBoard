@@ -1,25 +1,94 @@
 [
-  "CUSTOM",
-  "DUNLENDING",
-  "BEORNING",
-  "RIDERS OF ROHAN",
-  "MEN OF GONDOR",
-  "MEN OF LAKETOWN",
-  "MEN OF DOL AMROTH",
-  "MEN OF MIRKWOOD",
-  "WILDERLAND HOBBITS",
-  "ELVES OF MIRKWOOD",
-  "ELVES OF LORIEN",
-  "DWARVES OF ERED LUIN",
-  "DWARVES OF THE IRON HILLS",
-  "HARADRIM",
-  "EASTERLINGS",
-  "MEN OF DORWINION",
-  "DWARVES OF THE EAST",
-  "MEN OF UMBAR",
-  "LUMI-VÄKI",
-  "MEN OF THARBAD",
-  "ISTARI OF VALINOR",
-  "MEN OF LOND DEAR",
-  "ALTERNATE ELVES"
+  {
+    "race": "CUSTOM",
+    "description": ""
+  },
+  {
+    "race": "DUNLENDING",
+    "description": ""
+  },
+  {
+    "race": "BEORNING",
+    "description": ""
+  },
+  {
+    "race": "RIDERS OF ROHAN",
+    "description": ""
+  },
+  {
+    "race": "MEN OF GONDOR",
+    "description": ""
+  },
+  {
+    "race": "MEN OF LAKETOWN",
+    "description": ""
+  },
+  {
+    "race": "MEN OF DOL AMROTH",
+    "description": ""
+  },
+  {
+    "race": "MEN OF MIRKWOOD",
+    "description": ""
+  },
+  {
+    "race": "WILDERLAND HOBBITS",
+    "description": ""
+  },
+  {
+    "race": "ELVES OF MIRKWOOD",
+    "description": ""
+  },
+  {
+    "race": "ELVES OF LORIEN",
+    "description": ""
+  },
+  {
+    "race": "DWARVES OF ERED LUIN",
+    "description": ""
+  },
+  {
+    "race": "DWARVES OF THE IRON HILLS",
+    "description": ""
+  },
+  {
+    "race": "HARADRIM",
+    "description": ""
+  },
+  {
+    "race": "EASTERLINGS",
+    "description": ""
+  },
+  {
+    "race": "MEN OF DORWINION",
+    "description": ""
+  },
+  {
+    "race": "DWARVES OF THE EAST",
+    "description": ""
+  },
+  {
+    "race": "MEN OF UMBAR",
+    "description": ""
+  },
+  {
+    "race": "LUMI-VÄKI",
+    "description": ""
+  },
+  {
+    "race": "MEN OF THARBAD",
+    "description": ""
+  },
+  {
+    "race": "ISTARI OF VALINOR",
+    "description": ""
+  },
+  {
+    "race": "MEN OF LOND DEAR",
+    "description": ""
+  },
+  {
+    "race": "ALTERNATE ELVES",
+    "description": ""
+  }
 ]

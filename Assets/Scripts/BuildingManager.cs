@@ -215,7 +215,7 @@ public class BuildingManager : MonoBehaviour
 
                 float lowestY = combinedBounds.min.y;
                 pendingObjectOffset = 0f - lowestY;
-                pendingHealthBarOffset = combinedBounds.max.y + 2f;
+                pendingHealthBarOffset = combinedBounds.max.y + combinedBounds.size.y * 0.1f;
             }
 
             // Get the EnemyController component from the instantiated object
@@ -225,7 +225,7 @@ public class BuildingManager : MonoBehaviour
                 enemyController.adversary = adversary;
                 var healthBarInstance = Instantiate(healthBarPrefab, worldSpaceCanvas.transform).GetComponent<HealthBarUI>();
                 healthBarInstance.Initialize(pendingObject.transform, new Vector3(0, pendingHealthBarOffset - pendingObject.transform.position.y, 0), enemyController.adversary.Name);
-                healthBarInstance.transform.localScale = pendingObject.transform.localScale/100f;
+                //healthBarInstance.transform.localScale = pendingObject.transform.localScale/100f;
                 healthBarInstance.SetHealth(adversary.Endurance);
 
                 // Assign reference
@@ -241,7 +241,7 @@ public class BuildingManager : MonoBehaviour
                 allyController.allyObject = ally;
                 var nameBarUI = Instantiate(nameBarPrefab, worldSpaceCanvas.transform).GetComponent<NameBarUI>();
                 nameBarUI.Initialize(pendingObject.transform, new Vector3(0, pendingHealthBarOffset - pendingObject.transform.position.y, 0), allyController.allyObject.Name);
-                nameBarUI.transform.localScale = pendingObject.transform.localScale / 100f;
+                //nameBarUI.transform.localScale = pendingObject.transform.localScale / 100f;
 
                 allyController.SetUIBar(nameBarUI);
                 
