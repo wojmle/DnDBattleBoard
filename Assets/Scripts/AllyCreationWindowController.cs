@@ -32,7 +32,7 @@ namespace Assets
 
         private void OnDestroy()
         {
-            EventManager.TriggerEvent(nameof(FocusOutEvent));
+            //EventManager.TriggerEvent(nameof(FocusOutEvent));
         }
 
         public void ShowPanel()

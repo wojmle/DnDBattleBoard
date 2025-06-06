@@ -7,7 +7,7 @@ using TMPro;
 using System.Linq;
 using Assets.Scripts;
 
-public class BuildingManager : MonoBehaviour
+public class BuildingManager : MonoBehaviour, IDataSave
 {
     public Canvas worldSpaceCanvas;
     public GameObject healthBarPrefab;
@@ -41,22 +41,7 @@ public class BuildingManager : MonoBehaviour
 
     void Start()
     {
-        string[] adversaryGuids = AssetDatabase.FindAssets("t:Prefab", new[] { adversaryPrefabPath });
-        string[] allyGuids = AssetDatabase.FindAssets("t:Prefab", new[] { allyPrefabPath });
-        adversaryPrefabs = new GameObject[adversaryGuids.Length];
-        allyPrefabs = new GameObject[allyGuids.Length];
-
-        for (int i = 0; i < adversaryGuids.Length; i++)
-        {
-            string assetPath = AssetDatabase.GUIDToAssetPath(adversaryGuids[i]);
-            adversaryPrefabs[i] = AssetDatabase.LoadAssetAtPath<GameObject>(assetPath);
-        }
-
-        for (int i = 0; i < allyGuids.Length; i++)
-        {
-            string assetPath = AssetDatabase.GUIDToAssetPath(allyGuids[i]);
-            allyPrefabs[i] = AssetDatabase.LoadAssetAtPath<GameObject>(assetPath);
-        }
+        LoadPrefabs();
     }
 
     // Update is called once per frame
@@ -105,6 +90,12 @@ public class BuildingManager : MonoBehaviour
                 RotateObject();
             }
         }
+    }
+
+    private void LoadPrefabs()
+    {
+        adversaryPrefabs = Resources.LoadAll<GameObject>("Prefabs/Adversary");
+        allyPrefabs = Resources.LoadAll<GameObject>("Prefabs/Ally");
     }
 
     public void PlaceObject()
@@ -236,7 +227,7 @@ public class BuildingManager : MonoBehaviour
             }
 
             var allyController = pendingObject.GetComponent<AllyController>();
-            if (allyController != null && modelObject is Ally { } ally)
+            if (allyController != null && modelObject is Ally {} ally)
             {
                 allyController.allyObject = ally;
                 var nameBarUI = Instantiate(nameBarPrefab, worldSpaceCanvas.transform).GetComponent<NameBarUI>();
@@ -249,6 +240,86 @@ public class BuildingManager : MonoBehaviour
                 return;
             }
         }
+    }
+    
+    public void LoadData(GameData gameData)
+    {
+        if (gameData == null || gameData.defaultScene == null)
+        {
+            return;
+        }
+        string currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+        SceneData sceneData = null;
+
+        if (currentScene == "DefaultScene")
+            sceneData = gameData.defaultScene;
+        else
+            sceneData = gameData.scenes.FirstOrDefault(s => s.sceneName == currentScene);
+
+        if (sceneData == null)
+            return;
+
+        // Instantiate Allies
+        foreach (var ally in sceneData.allies)
+        {
+            InstantiateObjectAt(ally.ally, ally.transform.GetPosition(), ally.transform.GetRotation(), ally.transform.GetScale());
+            // Set transform, stats, etc. as needed
+        }
+
+        // Instantiate Enemies
+        foreach (var enemy in sceneData.enemies)
+        {
+            InstantiateObjectAt(enemy.adversary, enemy.transform.GetPosition(), enemy.transform.GetRotation(), enemy.transform.GetScale());
+            // Set transform, stats, etc. as needed
+        }
+    }
+
+    public void SaveData(ref GameData gameData)
+    {
+    }
+
+    public GameObject InstantiateObjectAt(IModelObject modelObject, Vector3 position, Quaternion rotation, Vector3 scale)
+    {
+        GameObject prefab = null;
+        
+        if (adversaryPrefabs.Any() is false || allyPrefabs.Any() is false)
+        {
+            LoadPrefabs();
+        }
+
+        if (modelObject is Adversary)
+            prefab = adversaryPrefabs.FirstOrDefault(x => x.gameObject.name == modelObject.Name);
+        else if (modelObject is Ally ally)
+            prefab = allyPrefabs.FirstOrDefault(x => x.gameObject.name == ally.Model);
+
+        if (prefab == null)
+            return null;
+
+        var obj = Instantiate(prefab, position, rotation);
+        obj.transform.localScale = scale;
+        obj.tag = "Object";
+
+        // Set up controllers as in InsertObject
+        var enemyController = obj.GetComponent<EnemyController>();
+        if (enemyController != null && modelObject is Adversary adversary)
+        {
+            enemyController.adversary = adversary;
+            var healthBarInstance = Instantiate(healthBarPrefab, worldSpaceCanvas.transform).GetComponent<HealthBarUI>();
+            healthBarInstance.Initialize(obj.transform, Vector3.zero, adversary.Name);
+            healthBarInstance.SetHealth(adversary.Endurance);
+            enemyController.SetHealthBar(healthBarInstance);
+        }
+
+        var allyController = obj.GetComponent<AllyController>();
+        if (allyController != null && modelObject is Ally allyObj)
+        {
+            allyController.allyObject = allyObj;
+            var nameBarUI = Instantiate(nameBarPrefab, worldSpaceCanvas.transform).GetComponent<NameBarUI>();
+            nameBarUI.Initialize(obj.transform, Vector3.zero, allyObj.Name);
+            allyController.SetUIBar(nameBarUI);
+        }
+
+        return obj;
     }
 
     public void ToggleGrid()

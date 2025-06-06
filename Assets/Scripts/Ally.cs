@@ -1,5 +1,7 @@
+using System;
 using UnityEngine;
 
+[Serializable]
 public class Ally : IModelObject
 {
     public string Name { get; set; }

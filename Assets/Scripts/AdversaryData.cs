@@ -1,8 +1,10 @@
+using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace Assets.Scripts
 {
+    [Serializable]
     public class Adversary : IModelObject
     {
         [JsonProperty("adversary_id")]

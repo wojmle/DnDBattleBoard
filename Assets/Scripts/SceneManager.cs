@@ -2,15 +2,29 @@ using UnityEngine;
 
 public class SceneManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            var saveManager = SaveManager.instance;
+            string currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+
+            if (currentScene == "MainMenuScene")
+            {
+                // Load the last scene from GameData
+                string lastScene = saveManager.gameData.defaultScene.sceneName;
+                if (!string.IsNullOrEmpty(lastScene))
+                {
+                    UnityEngine.SceneManagement.SceneManager.LoadScene(lastScene);
+                    
+                }
+            }
+            else
+            {
+                // Save and load MainMenuScene
+                saveManager.UpdateGameData();
+                UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenuScene");
+            }
+        }
     }
 }
